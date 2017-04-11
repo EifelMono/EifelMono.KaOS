@@ -1,1 +1,1 @@
-# Eifelmono.KaOS
+# EifelMono.KaOS
