@@ -1,10 +1,13 @@
 ﻿using System;
 namespace EifelMono.KaOS.Shared
 {
-	public class MyClass
+	public partial class File
 	{
-		public MyClass()
+		public void WriteAll()
 		{
+			System.IOFileWriteAll();
 		}
 	}
+
+	asdasd
 }

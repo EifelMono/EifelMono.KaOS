@@ -28,7 +28,29 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="readme.txt" />
+    <None Include="readme.txt">
+      <IncludeInPackage>true</IncludeInPackage>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NuGet.Build.Packaging">
+      <Version>0.1.227</Version>
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EifelMono.KaOS.Android\EifelMono.KaOS.Android.csproj">
+      <Project>{1EAC7EB6-64AC-4373-A3B7-3BE013D9CC91}</Project>
+      <Name>EifelMono.KaOS.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EifelMono.KaOS.iOS\EifelMono.KaOS.iOS.csproj">
+      <Project>{DFDC9484-BAC0-4D8F-B47F-0F2D4AE67584}</Project>
+      <Name>EifelMono.KaOS.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EifelMono.KaOS.macOS\EifelMono.KaOS.macOS.csproj">
+      <Project>{CECDF175-13F1-4585-B5E1-624924983FF9}</Project>
+      <Name>EifelMono.KaOS.macOS</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
   <Import Project="$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.targets" Condition="Exists('$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.targets')" />

@@ -1,9 +1,37 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EifelMono.KaOS.iOS", "EifelMono.KaOS.iOS\EifelMono.KaOS.iOS.csproj", "{DFDC9484-BAC0-4D8F-B47F-0F2D4AE67584}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EifelMono.KaOS.Android", "EifelMono.KaOS.Android\EifelMono.KaOS.Android.csproj", "{1EAC7EB6-64AC-4373-A3B7-3BE013D9CC91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EifelMono.KaOS.macOS", "EifelMono.KaOS.macOS\EifelMono.KaOS.macOS.csproj", "{CECDF175-13F1-4585-B5E1-624924983FF9}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "EifelMono.KaOS.Shared", "EifelMono.KaOS.Shared\EifelMono.KaOS.Shared.shproj", "{3DB4E5DC-1BB1-4F6C-9075-C740FEF9178F}"
+EndProject
+Project("{5DD5E4FA-CB73-4610-85AB-557B54E96AA9}") = "EifelMono.KaOs.NuGet", "EifelMono.KaOs.NuGet\EifelMono.KaOs.NuGet.nuproj", "{DCC444DA-909D-4BF0-9B6F-FE25644087F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFDC9484-BAC0-4D8F-B47F-0F2D4AE67584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFDC9484-BAC0-4D8F-B47F-0F2D4AE67584}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFDC9484-BAC0-4D8F-B47F-0F2D4AE67584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFDC9484-BAC0-4D8F-B47F-0F2D4AE67584}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EAC7EB6-64AC-4373-A3B7-3BE013D9CC91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EAC7EB6-64AC-4373-A3B7-3BE013D9CC91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EAC7EB6-64AC-4373-A3B7-3BE013D9CC91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EAC7EB6-64AC-4373-A3B7-3BE013D9CC91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CECDF175-13F1-4585-B5E1-624924983FF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CECDF175-13F1-4585-B5E1-624924983FF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CECDF175-13F1-4585-B5E1-624924983FF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CECDF175-13F1-4585-B5E1-624924983FF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCC444DA-909D-4BF0-9B6F-FE25644087F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCC444DA-909D-4BF0-9B6F-FE25644087F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCC444DA-909D-4BF0-9B6F-FE25644087F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCC444DA-909D-4BF0-9B6F-FE25644087F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
