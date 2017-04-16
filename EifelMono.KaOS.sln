@@ -20,6 +20,10 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "EifelMono.KaOS.Interface", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EifelMono.KaOS.Std", "EifelMono.KaOS\EifelMono.KaOS.Std\EifelMono.KaOS.Std.csproj", "{5C9BA856-025D-4178-943E-0ECEA4ABD55A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{94BD89AA-E983-493F-AB7C-3A5BA76362AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{FDB43A02-7B15-4286-8898-C3CF7A5DDB01}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		EifelMono.KaOS.Shared\EifelMono.KaOS.Shared.projitems*{1eac7eb6-64ac-4373-a3b7-3be013d9cc91}*SharedItemsImports = 4
@@ -52,6 +56,10 @@ Global
 		{5C9BA856-025D-4178-943E-0ECEA4ABD55A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C9BA856-025D-4178-943E-0ECEA4ABD55A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C9BA856-025D-4178-943E-0ECEA4ABD55A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDB43A02-7B15-4286-8898-C3CF7A5DDB01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDB43A02-7B15-4286-8898-C3CF7A5DDB01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDB43A02-7B15-4286-8898-C3CF7A5DDB01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDB43A02-7B15-4286-8898-C3CF7A5DDB01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,5 +71,6 @@ Global
 		{4A8BBFA5-A8B9-4305-8379-F12164D26C52} = {0E392F6D-FA24-470C-A29A-8B743A92728A}
 		{14E64768-53FC-4A9F-91E1-11AB98925D7B} = {6582ED2D-A4BB-4AB2-9FB3-E41E73347C55}
 		{5C9BA856-025D-4178-943E-0ECEA4ABD55A} = {6582ED2D-A4BB-4AB2-9FB3-E41E73347C55}
+		{FDB43A02-7B15-4286-8898-C3CF7A5DDB01} = {94BD89AA-E983-493F-AB7C-3A5BA76362AF}
 	EndGlobalSection
 EndGlobal
