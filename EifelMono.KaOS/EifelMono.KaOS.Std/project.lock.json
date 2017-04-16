@@ -128,6 +128,13 @@
           "System.Xml.XDocument": "4.3.0"
         }
       },
+      "NuGet.Build.Packaging/0.1.244-pr109": {
+        "type": "package",
+        "build": {
+          "build/NuGet.Build.Packaging.props": {},
+          "build/NuGet.Build.Packaging.targets": {}
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
         "type": "package",
         "runtimeTargets": {
@@ -1127,6 +1134,33 @@
         "dotnet_library_license.txt",
         "netstandard.library.1.6.1.nupkg.sha512",
         "netstandard.library.nuspec"
+      ]
+    },
+    "NuGet.Build.Packaging/0.1.244-pr109": {
+      "sha512": "05buVsadI0JQPp1Tknwqhe3Z/8cZ7t4O90p1fS2LEe/xKYb+3yHzVcwU/YO+J7nVt1Z3v+Q0QBJZ8rVUWmMlLA==",
+      "type": "package",
+      "path": "nuget.build.packaging/0.1.244-pr109",
+      "files": [
+        "build/ApiIntersect.exe",
+        "build/ApiIntersect.exe.config",
+        "build/FodyWeavers.xml",
+        "build/GenerateReferenceAssembly.csproj",
+        "build/ICSharpCode.Decompiler.dll",
+        "build/ICSharpCode.NRefactory.CSharp.dll",
+        "build/ICSharpCode.NRefactory.dll",
+        "build/MSBuild/Imports/Microsoft.Common.Props/ImportBefore/Microsoft.NuGet.Packaging.ImportBefore.props",
+        "build/MSBuild/Microsoft.Common.Targets/ImportAfter/Microsoft.NuGet.Packaging.ImportAfter.targets",
+        "build/Mono.Cecil.dll",
+        "build/Mono.Options.dll",
+        "build/NuGet.Build.Packaging.Authoring.props",
+        "build/NuGet.Build.Packaging.Authoring.targets",
+        "build/NuGet.Build.Packaging.Tasks.dll",
+        "build/NuGet.Build.Packaging.Tasks.pdb",
+        "build/NuGet.Build.Packaging.Version.props",
+        "build/NuGet.Build.Packaging.props",
+        "build/NuGet.Build.Packaging.targets",
+        "nuget.build.packaging.0.1.244-pr109.nupkg.sha512",
+        "nuget.build.packaging.nuspec"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -3866,7 +3900,8 @@
   "projectFileDependencyGroups": {
     "": [
       "Microsoft.NETCore.Portable.Compatibility >= 1.0.1",
-      "NETStandard.Library >= 1.6.1"
+      "NETStandard.Library >= 1.6.1",
+      "NuGet.Build.Packaging >= 0.1.244-pr109"
     ],
     ".NETStandard,Version=v1.5": []
   },
@@ -3883,7 +3918,8 @@
     },
     "dependencies": {
       "Microsoft.NETCore.Portable.Compatibility": "1.0.1",
-      "NETStandard.Library": "1.6.1"
+      "NETStandard.Library": "1.6.1",
+      "NuGet.Build.Packaging": "[0.1.244-pr109, )"
     },
     "frameworks": {
       "netstandard1.5": {}
