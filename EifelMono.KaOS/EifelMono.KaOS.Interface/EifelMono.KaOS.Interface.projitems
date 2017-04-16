@@ -11,13 +11,20 @@
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Extensions\" />
     <Folder Include="$(MSBuildThisFileDirectory)Extensions\Log\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Tools\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Extensions\NumericalExtensions\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\Log\Log.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\Log\ILogProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\Log\DebugLogProxy.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Log\LogDetails.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Log\LogType.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Log\LogExDetails.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Log\Log.Details.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Log\Log.Type.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Log\Log.ExDetails.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\Tools.LocalDotBackup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\StringExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\NumericalExtensions\NumericalExtensions.Double.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\NumericalExtensions\NumericalExtensions.Int.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\GenericExtensions.cs" />
   </ItemGroup>
 </Project>

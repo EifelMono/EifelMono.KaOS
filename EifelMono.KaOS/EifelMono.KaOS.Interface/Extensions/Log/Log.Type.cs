@@ -2,13 +2,16 @@
 
 namespace EifelMono.KaOS.Extensions
 {
-    public enum LogType
+    public static partial class Log
     {
-        Exception,
-        Trace,
-        Info,
-        Error,
-        Warning,
-        Debug,
+        public enum Type
+        {
+            Exception,
+            Trace,
+            Info,
+            Error,
+            Warning,
+            Debug,
+        }
     }
 }
