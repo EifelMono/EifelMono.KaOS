@@ -4,17 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DCC444DA-909D-4BF0-9B6F-FE25644087F8}</ProjectGuid>
-    <Description>EifelMono.KaOs.NuGet</Description>
-    <PackageId>EifelMono.KaOs.NuGet</PackageId>
+    <ProjectGuid>{842FDD52-B431-4153-9553-28B0578EB622}</ProjectGuid>
+    <Description>EifelMono.KaOS.NuGet</Description>
+    <PackageId>EifelMono.KaOS.NuGet</PackageId>
     <PackageVersion>1.0.0</PackageVersion>
     <Authors>andreas klapperich</Authors>
     <DevelopmentDependency>false</DevelopmentDependency>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <OutputType>Exe</OutputType>
-    <RootNamespace>EifelMono.KaOs.NuGet</RootNamespace>
+    <RootNamespace>EifelMono.KaOS.NuGet</RootNamespace>
     <UsePartialTypes>false</UsePartialTypes>
-    <AssemblyName>EifelMono.KaOs.NuGet</AssemblyName>
+    <AssemblyName>EifelMono.KaOS.NuGet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -34,7 +34,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="NuGet.Build.Packaging">
-      <Version>0.1.227</Version>
+      <Version>0.1.243</Version>
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
   </ItemGroup>

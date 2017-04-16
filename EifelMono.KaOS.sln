@@ -1,17 +1,32 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.3
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EifelMono.KaOS.iOS", "EifelMono.KaOS.iOS\EifelMono.KaOS.iOS.csproj", "{DFDC9484-BAC0-4D8F-B47F-0F2D4AE67584}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EifelMono.KaOS.Android", "EifelMono.KaOS.Android\EifelMono.KaOS.Android.csproj", "{1EAC7EB6-64AC-4373-A3B7-3BE013D9CC91}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EifelMono.KaOS.macOS", "EifelMono.KaOS.macOS\EifelMono.KaOS.macOS.csproj", "{CECDF175-13F1-4585-B5E1-624924983FF9}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "EifelMono.KaOS.Shared", "EifelMono.KaOS.Shared\EifelMono.KaOS.Shared.shproj", "{3DB4E5DC-1BB1-4F6C-9075-C740FEF9178F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interface", "Interface", "{6582ED2D-A4BB-4AB2-9FB3-E41E73347C55}"
 EndProject
-Project("{5DD5E4FA-CB73-4610-85AB-557B54E96AA9}") = "EifelMono.KaOs.NuGet", "EifelMono.KaOs.NuGet\EifelMono.KaOs.NuGet.nuproj", "{DCC444DA-909D-4BF0-9B6F-FE25644087F8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Implementation", "Implementation", "{0E392F6D-FA24-470C-A29A-8B743A92728A}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "EifelMono.KaOS.Implementation", "EifelMono.KaOS.Implementation\EifelMono.KaOS.Implementation.shproj", "{4A8BBFA5-A8B9-4305-8379-F12164D26C52}"
+EndProject
+Project("{5DD5E4FA-CB73-4610-85AB-557B54E96AA9}") = "EifelMono.KaOS.NuGet", "EifelMono.KaOS.NuGet\EifelMono.KaOS.NuGet.nuproj", "{842FDD52-B431-4153-9553-28B0578EB622}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "EifelMono.KaOS.Interface", "EifelMono.KaOS\EifelMono.KaOS.Interface\EifelMono.KaOS.Interface.shproj", "{14E64768-53FC-4A9F-91E1-11AB98925D7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EifelMono.KaOS.Std", "EifelMono.KaOS\EifelMono.KaOS.Std\EifelMono.KaOS.Std.csproj", "{5C9BA856-025D-4178-943E-0ECEA4ABD55A}"
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		EifelMono.KaOS.Shared\EifelMono.KaOS.Shared.projitems*{1eac7eb6-64ac-4373-a3b7-3be013d9cc91}*SharedItemsImports = 4
+		EifelMono.KaOS.Shared\EifelMono.KaOS.Shared.projitems*{3db4e5dc-1bb1-4f6c-9075-c740fef9178f}*SharedItemsImports = 13
+		EifelMono.KaOS.Shared\EifelMono.KaOS.Shared.projitems*{cecdf175-13f1-4585-b5e1-624924983ff9}*SharedItemsImports = 4
+		EifelMono.KaOS.Shared\EifelMono.KaOS.Shared.projitems*{dfdc9484-bac0-4d8f-b47f-0f2d4ae67584}*SharedItemsImports = 4
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -29,9 +44,24 @@ Global
 		{CECDF175-13F1-4585-B5E1-624924983FF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CECDF175-13F1-4585-B5E1-624924983FF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CECDF175-13F1-4585-B5E1-624924983FF9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DCC444DA-909D-4BF0-9B6F-FE25644087F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DCC444DA-909D-4BF0-9B6F-FE25644087F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DCC444DA-909D-4BF0-9B6F-FE25644087F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DCC444DA-909D-4BF0-9B6F-FE25644087F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{842FDD52-B431-4153-9553-28B0578EB622}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{842FDD52-B431-4153-9553-28B0578EB622}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{842FDD52-B431-4153-9553-28B0578EB622}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{842FDD52-B431-4153-9553-28B0578EB622}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C9BA856-025D-4178-943E-0ECEA4ABD55A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C9BA856-025D-4178-943E-0ECEA4ABD55A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C9BA856-025D-4178-943E-0ECEA4ABD55A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C9BA856-025D-4178-943E-0ECEA4ABD55A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1EAC7EB6-64AC-4373-A3B7-3BE013D9CC91} = {0E392F6D-FA24-470C-A29A-8B743A92728A}
+		{DFDC9484-BAC0-4D8F-B47F-0F2D4AE67584} = {0E392F6D-FA24-470C-A29A-8B743A92728A}
+		{CECDF175-13F1-4585-B5E1-624924983FF9} = {0E392F6D-FA24-470C-A29A-8B743A92728A}
+		{4A8BBFA5-A8B9-4305-8379-F12164D26C52} = {0E392F6D-FA24-470C-A29A-8B743A92728A}
+		{14E64768-53FC-4A9F-91E1-11AB98925D7B} = {6582ED2D-A4BB-4AB2-9FB3-E41E73347C55}
+		{5C9BA856-025D-4178-943E-0ECEA4ABD55A} = {6582ED2D-A4BB-4AB2-9FB3-E41E73347C55}
 	EndGlobalSection
 EndGlobal
