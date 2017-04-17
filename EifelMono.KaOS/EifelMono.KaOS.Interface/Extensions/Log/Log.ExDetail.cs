@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace EifelMono.KaOS.Extensions
 {
     public static partial class Log
