@@ -33,7 +33,7 @@ namespace EifelMono.KaOS.Tools
                         }
                         catch (Exception ex)
                         {
-                            ex.HandleException();
+                            ex.LogException();
                         }
                 }
                 return Path.Combine(backupDir, timestamp.ToString("yyyyMMdd-HHmmss") + Path.GetExtension(filename));
@@ -56,13 +56,13 @@ namespace EifelMono.KaOS.Tools
                          }
                          catch (Exception ex)
                          {
-                             ex.HandleException();
+                             ex.LogException();
                          }
                      });
                 }
                 catch (Exception ex)
                 {
-                    ex.HandleException();
+                    ex.LogException();
                 }
                 finally
                 {
@@ -73,7 +73,7 @@ namespace EifelMono.KaOS.Tools
                     }
                     catch (Exception ex)
                     {
-                        ex.HandleException();
+                        ex.LogException();
                     }
                 }
             }

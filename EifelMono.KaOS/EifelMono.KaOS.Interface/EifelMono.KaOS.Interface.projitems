@@ -18,9 +18,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\Log\Log.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\Log\ILogProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\Log\DebugLogProxy.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Log\Log.Details.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Log\Log.Type.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Log\Log.ExDetails.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Log\Log.Detail.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Log\Log.Kind.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Log\Log.ExDetail.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\Tools.LocalDotBackup.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\StringExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\NumericalExtensions\NumericalExtensions.Double.cs" />

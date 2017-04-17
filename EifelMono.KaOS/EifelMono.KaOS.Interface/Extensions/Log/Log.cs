@@ -7,110 +7,89 @@ namespace EifelMono.KaOS.Extensions
     {
         public static ILogProxy Proxy { get; set; } = new DebugLogProxy();
 
-        public static void LogException(this Exception ex,
-                                 ExDetails exDetails = null,
-                                 [CallerMemberName] string callerMemberName = "",
-                                 [CallerLineNumber] int callerLineNumber = -1,
-                                 [CallerFilePath] string callerFilePath = "")
+        private static Detail ProxyLog(Detail detail,
+                                       Detail parentDetail,
+                                       string message,
+                                       string kind,
+                                       string callerMemberName,
+                                       int callerLineNumber,
+                                       string callerFilePath)
         {
-            if (exDetails == null)
-                exDetails = new ExDetails();
-            exDetails.Type = Type.Exception;
-            exDetails.Message = ex.ToString();
-            exDetails.Ex = ex;
-            exDetails.CallerMemberName = callerMemberName;
-            exDetails.CallerLineNumber = callerLineNumber;
-            exDetails.CallerFilePath = callerFilePath;
-            Proxy.Log(exDetails);
+            if (detail == null)
+                detail = new Detail();
+            if (parentDetail != null)
+                detail.ParentId = parentDetail.Id;
+            detail.Kind = kind;
+            detail.Message = message;
+            detail.CallerMemberName = callerMemberName;
+            detail.CallerLineNumber = callerLineNumber;
+            detail.CallerFilePath = callerFilePath;
+            Proxy?.Log(detail);
+            return detail;
         }
 
-        public static void HandleException(this Exception ex,
-                                 ExDetails exDetails = null,
-                                 [CallerMemberName] string callerMemberName = "",
-                                 [CallerLineNumber] int callerLineNumber = -1,
-                                 [CallerFilePath] string callerFilePath = "")
+        public static Detail LogTrace(this string message,
+                                      Detail parentDetail = null,
+                                      [CallerMemberName] string callerMemberName = "",
+                                      [CallerLineNumber] int callerLineNumber = -1,
+                                      [CallerFilePath] string callerFilePath = "")
         {
-            ex.LogException(exDetails, callerMemberName, callerLineNumber, callerFilePath);
+            return ProxyLog(null, parentDetail, message, Kind.Trace, callerMemberName, callerLineNumber, callerFilePath);
         }
 
-        public static void LogTrace(this string value,
-                                 Details details = null,
-                                 [CallerMemberName] string callerMemberName = "",
-                                 [CallerLineNumber] int callerLineNumber = -1,
-                                 [CallerFilePath] string callerFilePath = "")
+        public static Detail LogInfo(this string message,
+                                     Detail parentDetail = null,
+                                     [CallerMemberName] string callerMemberName = "",
+                                     [CallerLineNumber] int callerLineNumber = -1,
+                                     [CallerFilePath] string callerFilePath = "")
         {
-            if (details == null)
-                details = new Details();
-            details.Type = Type.Trace;
-            details.Message = value;
-            details.CallerMemberName = callerMemberName;
-            details.CallerLineNumber = callerLineNumber;
-            details.CallerFilePath = callerFilePath;
-            Proxy.Log(details);
+            return ProxyLog(null, parentDetail, message, Kind.Info, callerMemberName, callerLineNumber, callerFilePath);
         }
 
-        public static void LogInfo(this string message,
-                               Details details = null,
-                               [CallerMemberName] string callerMemberName = "",
-                               [CallerLineNumber] int callerLineNumber = -1,
-                               [CallerFilePath] string callerFilePath = "")
+        public static Detail LogError(this string message,
+                                      Detail parentDetail = null,
+                                      [CallerMemberName] string callerMemberName = "",
+                                      [CallerLineNumber] int callerLineNumber = -1,
+                                      [CallerFilePath] string callerFilePath = "")
         {
-            if (details == null)
-                details = new Details();
-            details.Type = Type.Info;
-            details.Message = message;
-            details.CallerMemberName = callerMemberName;
-            details.CallerLineNumber = callerLineNumber;
-            details.CallerFilePath = callerFilePath;
-            Proxy.Log(details);
+            return ProxyLog(null, parentDetail, message, Kind.Error, callerMemberName, callerLineNumber, callerFilePath);
         }
 
-        public static void LogError(this string value,
-                                    Details details = null,
-                          [CallerMemberName] string callerMemberName = "",
-                          [CallerLineNumber] int callerLineNumber = -1,
-                          [CallerFilePath] string callerFilePath = "")
+        public static Detail LogWarning(this string message,
+                                        Detail parentDetail = null,
+                                        [CallerMemberName] string callerMemberName = "",
+                                        [CallerLineNumber] int callerLineNumber = -1,
+                                        [CallerFilePath] string callerFilePath = "")
         {
-            if (details == null)
-                details = new Details();
-            details.Type = Type.Error;
-            details.Message = value;
-            details.CallerMemberName = callerMemberName;
-            details.CallerLineNumber = callerLineNumber;
-            details.CallerFilePath = callerFilePath;
-            Proxy.Log(details);
+            return ProxyLog(null, parentDetail, message, Kind.Warning, callerMemberName, callerLineNumber, callerFilePath);
         }
 
-        public static void LogWarning(this string value,
-                               Details details = null,
-                               [CallerMemberName] string callerMemberName = "",
-                               [CallerLineNumber] int callerLineNumber = -1,
-                               [CallerFilePath] string callerFilePath = "")
+        public static Detail LogDebug(this string message,
+                                      Detail parentDetail = null,
+                                      [CallerMemberName] string callerMemberName = "",
+                                      [CallerLineNumber] int callerLineNumber = -1,
+                                      [CallerFilePath] string callerFilePath = "")
         {
-            if (details == null)
-                details = new Details();
-            details.Type = Type.Warning;
-            details.Message = value;
-            details.CallerMemberName = callerMemberName;
-            details.CallerLineNumber = callerLineNumber;
-            details.CallerFilePath = callerFilePath;
-            Proxy.Log(details);
+            return ProxyLog(null, parentDetail, message, Kind.Debug, callerMemberName, callerLineNumber, callerFilePath);
         }
 
-        public static void LogDebug(this string value,
-                             Details details = null,
-                             [CallerMemberName] string callerMemberName = "",
-                             [CallerLineNumber] int callerLineNumber = -1,
-                             [CallerFilePath] string callerFilePath = "")
+        public static Detail LogException(this Exception ex,
+                                         Detail parentDetail = null,
+                                         [CallerMemberName] string callerMemberName = "",
+                                         [CallerLineNumber] int callerLineNumber = -1,
+                                         [CallerFilePath] string callerFilePath = "")
         {
-            if (details == null)
-                details = new Details();
-            details.Type = Type.Debug;
-            details.Message = value;
-            details.CallerMemberName = callerMemberName;
-            details.CallerLineNumber = callerLineNumber;
-            details.CallerFilePath = callerFilePath;
-            Proxy.Log(details);
+            return ProxyLog(new ExDetail { Ex = ex }, parentDetail, ex.ToString(), Kind.Exception, callerMemberName, callerLineNumber, callerFilePath);
+        }
+
+        [Obsolete("Please use LogException for further calls")]
+        public static Detail HandleException(this Exception ex,
+                                             ExDetail exDetail = null,
+                                             [CallerMemberName] string callerMemberName = "",
+                                             [CallerLineNumber] int callerLineNumber = -1,
+                                             [CallerFilePath] string callerFilePath = "")
+        {
+            return ex.LogException(exDetail, callerMemberName, callerLineNumber, callerFilePath);
         }
     }
 }

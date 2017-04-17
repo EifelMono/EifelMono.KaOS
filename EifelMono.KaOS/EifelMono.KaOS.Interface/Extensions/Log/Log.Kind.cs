@@ -6,12 +6,12 @@ namespace EifelMono.KaOS.Extensions
     {
         public static class Kind
         {
-            public const int Exception= 0b0_0000_0001;
-            public const int Trace =    0b0_0000_0010;
-            public const int Info =     0b0_0000_0100;
-            public const int Error =    0b0_0000_1000;
-            public const int Warning =  0b0_0001_0000;
-            public const int Debug =    0b0_0010_0000;
+            public static string Trace {get; private set;} = nameof(Trace);
+            public static string Info { get; private set; } = nameof(Info);
+            public static string Error { get; private set; } = nameof(Error);
+            public static string Warning { get; private set; } = nameof(Warning);
+            public static string Debug { get; private set; } = nameof(Debug);
+            public static string Exception { get; private set; } = nameof(Exception);
         }
     }
 }

@@ -4,7 +4,7 @@ namespace EifelMono.KaOS.Extensions
 {
     public static partial class Log
     {
-        public class ExDetails : Details
+        public class ExDetail : Detail
         {
             /// <summary>
             /// Exception of this Log Detail

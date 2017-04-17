@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 
 namespace EifelMono.KaOS.Extensions
 {
     public interface ILogProxy
     {
-        void Log(Log.Details details);
+        void Log(Log.Detail details);
     }
 }
