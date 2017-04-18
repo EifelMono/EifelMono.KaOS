@@ -6,8 +6,25 @@ namespace EifelMono.KaOS.Extensions
     public static partial class Log
     {
         #region Proxy, gobal call
+
+        /// <summary>
+        /// Proxy for the Log
+        /// </summary>
+        /// <value>The proxy.</value>
         public static ILogProxy Proxy { get; set; } = new DebugLogProxy();
 
+
+        /// <summary>
+        /// Local Log Call
+        /// </summary>
+        /// <returns>The log.</returns>
+        /// <param name="detail">Detail.</param>
+        /// <param name="parentDetail">Parent detail.</param>
+        /// <param name="message">Message.</param>
+        /// <param name="kind">Kind.</param>
+        /// <param name="callerMemberName">Caller member name.</param>
+        /// <param name="callerLineNumber">Caller line number.</param>
+        /// <param name="callerFilePath">Caller file path.</param>
         public static Detail ProxyLog(Detail detail,
                                       Detail parentDetail,
                                       string message,
