@@ -5,15 +5,16 @@ namespace EifelMono.KaOS.Extensions
 {
     public static partial class Log
     {
+        #region Proxy, gobal call
         public static ILogProxy Proxy { get; set; } = new DebugLogProxy();
 
-        private static Detail ProxyLog(Detail detail,
-                                       Detail parentDetail,
-                                       string message,
-                                       string kind,
-                                       string callerMemberName,
-                                       int callerLineNumber,
-                                       string callerFilePath)
+        public static Detail ProxyLog(Detail detail,
+                                      Detail parentDetail,
+                                      string message,
+                                      string kind,
+                                      string callerMemberName,
+                                      int callerLineNumber,
+                                      string callerFilePath)
         {
             if (detail == null)
                 detail = new Detail();
@@ -27,6 +28,13 @@ namespace EifelMono.KaOS.Extensions
             Proxy?.Log(detail);
             return detail;
         }
+        #endregion
+
+        #region Trace
+        public static partial class Kind
+        {
+            public static string Trace { get; private set; } = nameof(Trace);
+        }
 
         public static Detail LogTrace(this string message,
                                       Detail parentDetail = null,
@@ -35,6 +43,13 @@ namespace EifelMono.KaOS.Extensions
                                       [CallerFilePath] string callerFilePath = "")
         {
             return ProxyLog(null, parentDetail, message, Kind.Trace, callerMemberName, callerLineNumber, callerFilePath);
+        }
+        #endregion
+
+        #region Log Info
+        public static partial class Kind
+        {
+            public static string Info { get; private set; } = nameof(Info);
         }
 
         public static Detail LogInfo(this string message,
@@ -45,6 +60,13 @@ namespace EifelMono.KaOS.Extensions
         {
             return ProxyLog(null, parentDetail, message, Kind.Info, callerMemberName, callerLineNumber, callerFilePath);
         }
+        #endregion
+
+        #region Log Error
+        public static partial class Kind
+        {
+            public static string Error { get; private set; } = nameof(Error);
+        }
 
         public static Detail LogError(this string message,
                                       Detail parentDetail = null,
@@ -53,6 +75,13 @@ namespace EifelMono.KaOS.Extensions
                                       [CallerFilePath] string callerFilePath = "")
         {
             return ProxyLog(null, parentDetail, message, Kind.Error, callerMemberName, callerLineNumber, callerFilePath);
+        }
+        #endregion
+
+        #region Log Warning
+        public static partial class Kind
+        {
+            public static string Warning { get; private set; } = nameof(Warning);
         }
 
         public static Detail LogWarning(this string message,
@@ -63,6 +92,13 @@ namespace EifelMono.KaOS.Extensions
         {
             return ProxyLog(null, parentDetail, message, Kind.Warning, callerMemberName, callerLineNumber, callerFilePath);
         }
+        #endregion
+
+        #region Log Info
+        public static partial class Kind
+        {
+            public static string Debug { get; private set; } = nameof(Debug);
+        }
 
         public static Detail LogDebug(this string message,
                                       Detail parentDetail = null,
@@ -71,6 +107,14 @@ namespace EifelMono.KaOS.Extensions
                                       [CallerFilePath] string callerFilePath = "")
         {
             return ProxyLog(null, parentDetail, message, Kind.Debug, callerMemberName, callerLineNumber, callerFilePath);
+        }
+        #endregion
+
+
+        #region Log Info
+        public static partial class Kind
+        {
+            public static string Exception { get; private set; } = nameof(Exception);
         }
 
         public static Detail LogException(this Exception ex,
@@ -91,5 +135,6 @@ namespace EifelMono.KaOS.Extensions
         {
             return ex.LogException(exDetail, callerMemberName, callerLineNumber, callerFilePath);
         }
+        #endregion
     }
 }
