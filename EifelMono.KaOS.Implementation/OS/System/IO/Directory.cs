@@ -1,7 +1,7 @@
 ﻿using System;
 namespace EifelMono.KaOS.Implementation.OS
 {
-    public class Dictionary : IDictionary
+    public class Directory : IDirectory
     {
         public bool IsAvailable => true;
 

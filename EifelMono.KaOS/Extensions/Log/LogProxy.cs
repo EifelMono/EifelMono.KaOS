@@ -7,7 +7,7 @@ namespace EifelMono.KaOS.Extensions
     {
         public bool FileNameOnly { get; set; } = true;
 
-        public virtual void Log(KaOS.Extensions.Log.Detail details)
+        public virtual void Log(Log.Detail details)
         {
         }
     }

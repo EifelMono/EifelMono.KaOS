@@ -1,10 +1,10 @@
 ﻿using System;
-namespace EifelMono.KaOS.Implementation.OS.System
+namespace EifelMono.KaOS.Implementation.OS
 {
-    public class System
+    public class System : ISystem
     {
-        public System()
-        {
-        }
+        public bool IsAvailable => true;
+
+        public IIO IO => (new Lazy<IIO>(() => new IO()).Value);
     }
 }

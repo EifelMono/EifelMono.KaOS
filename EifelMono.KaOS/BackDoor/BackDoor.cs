@@ -11,51 +11,57 @@ namespace EifelMono.KaOS
 
         internal class Item
         {
-            private Type m_ClassType;
+            private Type _ClassType;
 
             internal Type ClassType
             {
-                get { return m_ClassType; }
+                get { return _ClassType; }
                 set
                 {
-                    m_ClassType = value;
+                    _ClassType = value;
                     ClassTypeInfo = value.GetTypeInfo();
                 }
             }
 
             internal TypeInfo ClassTypeInfo { get; set; }
 
-            private Type m_InterfaceType;
+            private Type _InterfaceType;
 
             internal Type InterfaceType
             {
-                get { return m_InterfaceType; }
+                get { return _InterfaceType; }
                 set
                 {
-                    m_InterfaceType = value;
+                    _InterfaceType = value;
                     InterfaceTypeInfo = value.GetTypeInfo();
                 }
             }
 
             internal TypeInfo InterfaceTypeInfo { get; set; }
 
-            internal object Instance { get; set; }
+            internal object Object { get; set; }
         }
 
-        internal static List<Item> Items { get; private set; } = new List<Item>();
-
-        /// <summary>
-        /// Init the specified assemblies.
-        /// </summary>
-        /// <param name="assemblies">Assemblies.</param>
-        public static void Init(IEnumerable<Assembly> assemblies)
+        internal static List<Item> _Items = null;
+            
+        internal static List<Item> Items
         {
-            foreach (Assembly assembly in assemblies)
+            get
             {
-                object[] attributes = assembly.GetCustomAttributes(typeof(BackDoorAttribute)).ToArray<Attribute>();
-                if (attributes.Length != 0)
-                    foreach (BackDoorAttribute attribute in attributes)
-                        Items.Add(new Item() { ClassType = attribute.ClassType });
+                if (_Items== null)
+                {
+                    var k= Assembly.GetEntryAssembly().GetReferencedAssemblies();
+                    _Items = new List<Item>();
+                    foreach (var assemblyName in Assembly.GetEntryAssembly().GetReferencedAssemblies()) 
+                    {
+                        Assembly assembly = Assembly.Load(assemblyName);
+                        object[] attributes = assembly.GetCustomAttributes(typeof(BackDoorAttribute)).ToArray<Attribute>();
+                        if (attributes.Length != 0)
+                            foreach (BackDoorAttribute attribute in attributes)
+                                _Items.Add(new Item() { ClassType = attribute.ClassType });
+                    } 
+                }
+                return _Items;
             }
         }
 
@@ -63,20 +69,12 @@ namespace EifelMono.KaOS
 
         #region Create
 
-        /// <summary>
-        /// Mode.
-        /// </summary>
         internal enum Mode
         {
             Instance,
             New,
         }
 
-        /// <summary>
-        /// Get the specified mode.
-        /// </summary>
-        /// <param name="mode">Mode.</param>
-        /// <typeparam name="T">The 1st type parameter.</typeparam>
         internal static T Get<T>(Mode mode) where T : class
         {
             Type interfaceType = typeof(T);
@@ -95,9 +93,9 @@ namespace EifelMono.KaOS
                     return (T)Activator.CreateInstance(item.ClassType);
                 else
                 {
-                    if (item.Instance == null)
-                        item.Instance = (T)Activator.CreateInstance(item.ClassType);
-                    return (T)item.Instance;
+                    if (item.Object == null)
+                        item.Object = (T)Activator.CreateInstance(item.ClassType);
+                    return (T)item.Object;
                 }
             }
 
@@ -105,19 +103,11 @@ namespace EifelMono.KaOS
 
         }
 
-        /// <summary>
-        /// New this instance.
-        /// </summary>
-        /// <typeparam name="T">The 1st type parameter.</typeparam>
         public static T New<T>() where T : class
         {
             return Get<T>(BackDoor.Mode.New);
         }
 
-        /// <summary>
-        /// Instance this instance.
-        /// </summary>
-        /// <typeparam name="T">The 1st type parameter.</typeparam>
         public static T Instance<T>() where T : class
         {
             return Get<T>(BackDoor.Mode.Instance);

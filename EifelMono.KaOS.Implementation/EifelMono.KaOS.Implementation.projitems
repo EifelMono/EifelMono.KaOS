@@ -9,6 +9,18 @@
     <Import_RootNamespace>EifelMono.KaOS.Implementation</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)MyClass.cs" />
+    <Folder Include="$(MSBuildThisFileDirectory)OS\" />
+    <Folder Include="$(MSBuildThisFileDirectory)OS\System\" />
+    <Folder Include="$(MSBuildThisFileDirectory)OS\System\IO\" />
+  </ItemGroup>
+  <ItemGroup>
+
+    <Compile Include="$(MSBuildThisFileDirectory)OS\OS.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OS\System\System.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OS\System\IO\IO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OS\System\IO\Directory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OS\System\IO\File.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OS\System\IO\Path.cs" />
+
   </ItemGroup>
 </Project>

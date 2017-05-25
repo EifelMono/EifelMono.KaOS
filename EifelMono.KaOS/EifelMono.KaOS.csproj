@@ -5,7 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NuGet.Build.Packaging" Version="0.1.244-pr109" />
+    <Folder Include="BackDoor\" />
+    <Folder Include="Classes\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="OS\" />
+    <Folder Include="Tools\" />
   </ItemGroup>
-  <Import Project="..\EifelMono.KaOS.Interface\EifelMono.KaOS.Interface.projitems" Label="Shared" Condition="Exists('..\EifelMono.KaOS.Interface\EifelMono.KaOS.Interface.projitems')" />
 </Project>

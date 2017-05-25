@@ -1,4 +1,4 @@
-﻿namespace EifelMono.KaOS.Implementation.System.IO
+﻿namespace EifelMono.KaOS.Implementation.OS
 {
     public class Path : IPath
     {
