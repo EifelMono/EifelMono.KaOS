@@ -1,5 +1,5 @@
 ﻿using System;
-namespace EifelMono.KaOS.Implementation.OS.Real
+namespace EifelMono.KaOS.Implementation.OSx
 {
     public class Platform : IPlatform
     {

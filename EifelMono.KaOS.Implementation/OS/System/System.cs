@@ -1,5 +1,5 @@
 ﻿using System;
-namespace EifelMono.KaOS.Implementation.OS
+namespace EifelMono.KaOS.Implementation
 {
     public class System : ISystem
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace EifelMono.KaOS.Implementation.OS
+namespace EifelMono.KaOS.Implementation
 {
     public class File: IFile
     {

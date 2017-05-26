@@ -18,11 +18,11 @@ namespace ConsoleTest
         {
 
             EifelMono.KaOS.Implementation.KaOS.Init();
-            KaOS.Init();
+            EifelMono.KaOS.KaOS.Init();
 
             Console.WriteLine(OS.Platform.Kind);
 
-            OS.Dialogs.OpenFileDialog(Directory.GetCurrentDirectory(), new string);
+            OS.Dialogs.OpenFileDialog(Directory.GetCurrentDirectory());
 
             string s11 = JsonConvert.SerializeObject(Mimes.Test1);
             Log.Proxy = new DebugLogProxy();
