@@ -31,12 +31,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="OS\Platfom\Platform.cs" />
+    <Compile Include="Dialogs\Dialogs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EifelMono.KaOS\EifelMono.KaOS.csproj">
       <Project>{232508EB-BD67-442C-AC8D-178CC7D2D5A2}</Project>
       <Name>EifelMono.KaOS</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="OS\" />
+    <Folder Include="OS\Platfom\" />
+    <Folder Include="Dialogs\" />
   </ItemGroup>
   <Import Project="..\EifelMono.KaOS.Implementation\EifelMono.KaOS.Implementation.projitems" Label="Shared" Condition="Exists('..\EifelMono.KaOS.Implementation\EifelMono.KaOS.Implementation.projitems')" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

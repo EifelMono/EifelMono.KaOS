@@ -4,11 +4,12 @@ namespace EifelMono.KaOS
 {
     public interface IOS
     {
-        #region System.IO
 
         ISystem System { get; }
 
-        #endregion
+        IPlatform Platform { get; }
+
+        IDialogs Dialogs { get; }
 
         /*
         IApplication Application { get; }

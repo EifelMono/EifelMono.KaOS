@@ -7,6 +7,9 @@ namespace EifelMono.KaOS
 
         public static ISystem System { get { return Instance.Value.System; } }
 
+        public static IPlatform Platform { get { return Instance.Value.Platform; } }
+
+        public static IDialogs Dialogs { get { return Instance.Value.Dialogs; } }
         /*
         public static IApplication Application { get { return Instance.Value.Application; } }
 

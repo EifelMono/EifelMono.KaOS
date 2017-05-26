@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using EifelMono.KaOS;
 using EifelMono.KaOS.Extensions;
 using Newtonsoft.Json;
@@ -16,12 +17,16 @@ namespace ConsoleTest
         public static void Main(string[] args)
         {
 
-            EifelMono.KaOS.Implementation.OS.OS xxx = null;
+            EifelMono.KaOS.Implementation.KaOS.Init();
+            KaOS.Init();
+
+            Console.WriteLine(OS.Platform.Kind);
+
+            OS.Dialogs.OpenFileDialog(Directory.GetCurrentDirectory(), new string);
 
             string s11 = JsonConvert.SerializeObject(Mimes.Test1);
             Log.Proxy = new DebugLogProxy();
 
-            KaOS.Init();
             var X= OS.System.IO.Directory.GetFiles("/");
 
             Mimes x = Mimes.Test1;
