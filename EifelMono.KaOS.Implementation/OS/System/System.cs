@@ -5,6 +5,8 @@ namespace EifelMono.KaOS.Implementation
     {
         public bool IsAvailable => true;
 
-        public IIO IO => (new Lazy<IIO>(() => new IO()).Value);
+        private Lazy<IIO> _IO = new Lazy<IIO>(() => new IO());
+
+        public IIO IO => _IO.Value;
     }
 }

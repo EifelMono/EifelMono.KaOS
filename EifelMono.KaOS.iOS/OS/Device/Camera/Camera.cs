@@ -8,7 +8,9 @@ namespace EifelMono.KaOS.Implementation.OSx
     {
         public bool IsAvailable => true;
 
-        public ITourch Tourch => new Lazy<ITourch>(() => new Tourch()).Value;
+        private Lazy<ITourch> _Tourch = new Lazy<ITourch>(() => new Tourch());
+
+        public ITourch Tourch => _Tourch.Value;
 
         public List<CameraKind> AvailableCameras()
         {

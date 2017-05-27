@@ -1,4 +1,5 @@
 ﻿using System;
+using Foundation;
 using UIKit;
 
 namespace EifelMono.KaOS.Implementation.OSx
@@ -7,6 +8,29 @@ namespace EifelMono.KaOS.Implementation.OSx
     {
         public bool IsAvailable => true;
 
-        public int Badge { get => (int)UIApplication.SharedApplication.ApplicationIconBadgeNumber; set => UIApplication.SharedApplication.ApplicationIconBadgeNumber = value; }
+        private First IsRegisterBadge = new First();
+        private void RegisterBadge()
+        {
+            if (IsRegisterBadge.IsFirst)
+            {
+                var settings = UIUserNotificationSettings.GetSettingsForTypes(
+                     UIUserNotificationType.Badge,
+                     new NSSet());
+                UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
+            }
+        }
+
+        public int Badge
+        {
+            get
+            {
+                return (int)UIApplication.SharedApplication.ApplicationIconBadgeNumber;
+            }
+            set
+            {
+                RegisterBadge();
+                UIApplication.SharedApplication.ApplicationIconBadgeNumber = value;
+            }
+        }
     }
 }

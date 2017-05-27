@@ -7,7 +7,9 @@ namespace EifelMono.KaOS
 
         public static IApplication Application => Instance.Application;
 
-        public static Developer Developer => new Developer();
+        private static  Lazy<Developer> _Developer = new Lazy<Developer>(() => new Developer());
+
+        public static Developer Developer => _Developer.Value;
 
         public static IDevice Device => Instance.Device;
 

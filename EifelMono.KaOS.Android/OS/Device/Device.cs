@@ -8,7 +8,9 @@ namespace EifelMono.KaOS.Implementation.OSx
 
         public PlatformKind PlatformKind => PlatformKind.Android;
 
-        public ICamera Camera => new Lazy<ICamera>(()=> new Camera()).Value;
+        private Lazy<ICamera> _Camera = new Lazy<ICamera>(() => new Camera());
+
+        public ICamera Camera => _Camera.Value;
 
         public void Vibrate(int time = -1)
         {

@@ -5,10 +5,16 @@ namespace EifelMono.KaOS.Implementation
     {
         public bool IsAvailable => true;
 
-        public IDirectory Directory => (new Lazy<IDirectory>(() => new Directory()).Value);
+        private Lazy<IDirectory> _Directory = new Lazy<IDirectory>(() => new Directory());
 
-        public IFile File => (new Lazy<IFile>(() => new File()).Value);
+        public IDirectory Directory => _Directory.Value;
 
-        public IPath Path => (new Lazy<IPath>(() => new Path()).Value);
+        private Lazy<IFile> _File = new Lazy<IFile>(() => new File());
+
+        public IFile File => _File.Value;
+
+        private Lazy<IPath> _Path = new Lazy<IPath>(() => new Path());
+
+        public IPath Path => _Path.Value;
     }
 }

@@ -5,14 +5,23 @@ using EifelMono.KaOS;
 
 namespace EifelMono.KaOS.Implementation.BackDoor
 {
-    public class OS: IOS
+    public class OS : IOS
     {
-        public IApplication Application => new Lazy<IApplication>(() => new OSx.Application()).Value;
+        private Lazy<IApplication> _Application = new Lazy<IApplication>(() => new OSx.Application());
 
-        public ISystem System => new Lazy<ISystem>(() => new System()).Value;
+        public IApplication Application => _Application.Value;
 
-        public IDevice Device => new Lazy<IDevice>(() => new OSx.Device()).Value;
+        private Lazy<ISystem> _System = new Lazy<ISystem>(() => new System());
 
-        public IDialogs Dialogs => new Lazy<IDialogs>(() => new OSx.Dialogs()).Value;
+        public ISystem System => _System.Value;
+
+        private Lazy<IDevice> _Device = new Lazy<IDevice>(() => new OSx.Device());
+
+        public IDevice Device => _Device.Value;
+
+        private Lazy<IDialogs> _Dialogs = new Lazy<IDialogs>(() => new OSx.Dialogs());
+
+        public IDialogs Dialogs => _Dialogs.Value;
+
     }
 }
