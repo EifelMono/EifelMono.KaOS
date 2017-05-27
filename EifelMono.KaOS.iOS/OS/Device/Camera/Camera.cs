@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using UIKit;
+
 namespace EifelMono.KaOS.Implementation.OSx
 {
     public class Camera : ICamera
@@ -7,9 +10,14 @@ namespace EifelMono.KaOS.Implementation.OSx
 
         public ITourch Tourch => new Lazy<ITourch>(() => new Tourch()).Value;
 
-        public CameraKind[] AvailableCameras()
+        public List<CameraKind> AvailableCameras()
         {
-            throw new NotImplementedException();
+            List<CameraKind> availableCameras = new List<CameraKind>();
+            if (UIImagePickerController.IsCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Front))
+                availableCameras.Add(CameraKind.Front);
+            if (UIImagePickerController.IsCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Rear))
+                availableCameras.Add(CameraKind.Rear);
+            return availableCameras;
         }
     }
 }

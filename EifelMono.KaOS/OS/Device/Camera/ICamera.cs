@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace EifelMono.KaOS
 {
     public interface ICamera : IAvailable
     {
-        CameraKind[] AvailableCameras();
+        List<CameraKind> AvailableCameras();
 
         ITourch Tourch { get; }
     }

@@ -13,7 +13,7 @@ namespace EifelMono.KaOS.Implementation.OSx
             get
             {
                 if (_IsAvailable == null)
-                    using (AVCaptureDevice device = AVCaptureDevice.DefaultDeviceWithMediaType(AVMediaType.Video))
+                    using (AVCaptureDevice device = AVCaptureDevice.GetDefaultDevice(AVMediaType.Video))
                     {
                         _IsAvailable = device != null ? device.TorchAvailable : false;
                     }
@@ -25,7 +25,7 @@ namespace EifelMono.KaOS.Implementation.OSx
         {
             get
             {
-                using (AVCaptureDevice device = AVCaptureDevice.DefaultDeviceWithMediaType(AVMediaType.Video))
+                using (AVCaptureDevice device = AVCaptureDevice.GetDefaultDevice(AVMediaType.Video))
                 {
                     if (device != null)
                     {
@@ -40,7 +40,7 @@ namespace EifelMono.KaOS.Implementation.OSx
             }
             set
             {
-                using (AVCaptureDevice device = AVCaptureDevice.DefaultDeviceWithMediaType(AVMediaType.Video))
+                using (AVCaptureDevice device = AVCaptureDevice.GetDefaultDevice(AVMediaType.Video))
                 {
                     if (device != null)
                     {
@@ -53,7 +53,7 @@ namespace EifelMono.KaOS.Implementation.OSx
                                 device.UnlockForConfiguration();
                             }
                             else
-                                $"LockForConfiguration out error={error}".LogError();
+                                OS.Developer.LogError($"LockForConfiguration out error={error}");
                         }
                     }
                 }

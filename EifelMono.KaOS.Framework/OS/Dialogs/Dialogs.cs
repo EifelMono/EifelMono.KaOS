@@ -3,16 +3,18 @@ namespace EifelMono.KaOS.Implementation.OSx
 {
     public class Dialogs : IDialogs
     {
-        public bool IsAvailable => throw new NotImplementedException();
+        public bool IsAvailable => true;
 
         public MessageBoxButton MessageBox(string title, string message, MessageBoxButton[] buttons)
         {
-            throw new NotImplementedException();
+            OS.Developer.NoEquivalentFunctionAvailable(nameof(MessageBox));
+            return MessageBoxButton.None;
         }
 
-        public string OpenFileDialog(string path, string[] extensions = null)
+        public string OpenFileDialog(string path, string[] extensions)
         {
-            throw new NotImplementedException();
+            OS.Developer.NoEquivalentFunctionAvailable(nameof(OpenFileDialog));
+            return "";
         }
     }
 }

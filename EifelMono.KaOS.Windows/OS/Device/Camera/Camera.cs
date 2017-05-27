@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace EifelMono.KaOS.Implementation.OSx
 {
     public class Camera : ICamera
@@ -7,9 +9,11 @@ namespace EifelMono.KaOS.Implementation.OSx
 
         public ITourch Tourch => new Lazy<ITourch>(() => new Tourch()).Value;
 
-        public CameraKind[] AvailableCameras()
+        public List<CameraKind> AvailableCameras()
         {
-            throw new NotImplementedException();
+            var availableCameras = new List<CameraKind>();
+            OS.Developer.NotImplemented();
+            return availableCameras;
         }
     }
 }
