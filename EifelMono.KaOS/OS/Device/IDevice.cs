@@ -3,8 +3,10 @@ namespace EifelMono.KaOS
 {
     public interface IDevice: IAvailable
     {
-        PlatformKind PaltformKind { get; }
+        PlatformKind PlatformKind { get; }
 
         void Vibrate(int time = -1);
+
+        ICamera Camera { get; }
     }
 }

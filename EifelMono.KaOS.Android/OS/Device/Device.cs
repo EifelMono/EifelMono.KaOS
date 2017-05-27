@@ -6,7 +6,9 @@ namespace EifelMono.KaOS.Implementation.OSx
     {
         public bool IsAvailable => true;
 
-        public PlatformKind PaltformKind => PlatformKind.Android;
+        public PlatformKind PlatformKind => PlatformKind.Android;
+
+        public ICamera Camera => new Lazy<ICamera>(()=> new Camera()).Value;
 
         public void Vibrate(int time = -1)
         {

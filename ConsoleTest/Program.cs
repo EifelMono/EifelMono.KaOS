@@ -20,7 +20,7 @@ namespace ConsoleTest
             EifelMono.KaOS.Implementation.KaOS.Init();
             EifelMono.KaOS.KaOS.Init();
 
-            Console.WriteLine(OS.Device.PaltformKind);
+            Console.WriteLine(OS.Device.PlatformKind);
 
             OS.Dialogs.OpenFileDialog(Directory.GetCurrentDirectory());
 

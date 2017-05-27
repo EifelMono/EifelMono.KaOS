@@ -5,12 +5,7 @@ namespace EifelMono.KaOS
 {
     public class Developer
     {
-        public event Action<Exception> OnException;
-
-        public void Exception(Exception ex)
-        {
-            OnException?.Invoke(ex);
-        }
+        public event Action<string, string, string, int, string> OnAll;
 
         public event Action<string, string, int, string> OnNotImplemented;
 
@@ -19,6 +14,7 @@ namespace EifelMono.KaOS
                                   [CallerLineNumber] int callerLineNumber = -1,
                                   [CallerFilePath] string callerFilePath = "")
         {
+            OnAll?.Invoke(nameof(NotImplemented), message, callerMemberName, callerLineNumber, callerFilePath);
             OnNotImplemented?.Invoke(message, callerMemberName, callerLineNumber, callerFilePath);
         }
 
@@ -29,7 +25,19 @@ namespace EifelMono.KaOS
                                   [CallerLineNumber] int callerLineNumber = -1,
                                   [CallerFilePath] string callerFilePath = "")
         {
+            OnAll?.Invoke(nameof(NoEquivalentFunctionAvailable), message, callerMemberName, callerLineNumber, callerFilePath);
             OnNoEquivalentFunctionAvailable?.Invoke(message, callerMemberName, callerLineNumber, callerFilePath);
+        }
+
+        public event Action<string, string, int, string> OnNoOSxNeededUseImplemented;
+
+        public void NoOSxNeededUseImplemented(string message,
+                                  [CallerMemberName] string callerMemberName = "",
+                                  [CallerLineNumber] int callerLineNumber = -1,
+                                  [CallerFilePath] string callerFilePath = "")
+        {
+            OnAll?.Invoke(nameof(NoOSxNeededUseImplemented), message, callerMemberName, callerLineNumber, callerFilePath);
+            OnNoOSxNeededUseImplemented?.Invoke(message, callerMemberName, callerLineNumber, callerFilePath);
         }
     }
 }

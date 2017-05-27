@@ -9,8 +9,8 @@ namespace EifelMono.KaOS.Implementation.BackDoor
     {
         public ISystem System => new Lazy<ISystem>(() => new System()).Value;
 
-        public IDevice Device => new Lazy<IDevice>(() => new Device()).Value;
+        public IDevice Device => new Lazy<IDevice>(() => new OSx.Device()).Value;
 
-        public IDialogs Dialogs => new Lazy<IDialogs>(() => new Dialogs()).Value;
+        public IDialogs Dialogs => new Lazy<IDialogs>(() => new OSx.Dialogs()).Value;
     }
 }

@@ -33,6 +33,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="OS\Device\Device.cs" />
     <Compile Include="OS\Dialogs\Dialogs.cs" />
+    <Compile Include="OS\Device\Camera\Camera.cs" />
+    <Compile Include="OS\Device\Camera\Tourch\Tourch.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EifelMono.KaOS\EifelMono.KaOS.csproj">
@@ -44,6 +46,7 @@
     <Folder Include="OS\" />
     <Folder Include="OS\Device\" />
     <Folder Include="OS\Dialogs\" />
+    <Folder Include="OS\Device\Camera\" />
   </ItemGroup>
   <Import Project="..\EifelMono.KaOS.Implementation\EifelMono.KaOS.Implementation.projitems" Label="Shared" Condition="Exists('..\EifelMono.KaOS.Implementation\EifelMono.KaOS.Implementation.projitems')" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

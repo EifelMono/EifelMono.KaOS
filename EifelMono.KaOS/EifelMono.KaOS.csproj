@@ -13,5 +13,7 @@
     <Folder Include="OS\Device\" />
     <Folder Include="OS\Dialogs\" />
     <Folder Include="OS\Developer\" />
+    <Folder Include="OS\Device\Camera\" />
+    <Folder Include="OS\Device\Camera\Tourch\" />
   </ItemGroup>
 </Project>
