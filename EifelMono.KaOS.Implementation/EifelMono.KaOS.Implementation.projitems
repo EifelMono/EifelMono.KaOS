@@ -12,7 +12,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)OS\" />
     <Folder Include="$(MSBuildThisFileDirectory)OS\System\" />
     <Folder Include="$(MSBuildThisFileDirectory)OS\System\IO\" />
-    <Folder Include="$(MSBuildThisFileDirectory)OS\Platform\" />
+    <Folder Include="$(MSBuildThisFileDirectory)OS\Device\" />
     <Folder Include="$(MSBuildThisFileDirectory)OS\Dialogs\" />
   </ItemGroup>
   <ItemGroup>
@@ -25,7 +25,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)OS\System\IO\Path.cs" />
 
     <Compile Include="$(MSBuildThisFileDirectory)KaOS.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)OS\Platform\Platform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OS\Device\Device.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OS\Dialogs\Dialogs.cs" />
   </ItemGroup>
 </Project>

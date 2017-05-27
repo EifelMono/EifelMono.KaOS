@@ -1,15 +1,21 @@
 ﻿using System;
-namespace EifelMono.KaOS.Implementation.OS
+namespace EifelMono.KaOS.Implementation
 {
     public class Dialogs: IDialogs
     {
-        public bool IsAvailable => Implementation != null && Implementation.IsAvailable;
+        public bool IsAvailable => OSxDialogs != null && OSxDialogs.IsAvailable;
 
-        public static IDialogs Implementation => new Lazy<IDialogs>(() => new OSx.Dialogs()).Value;
+        public static IDialogs OSxDialogs => new Lazy<IDialogs>(() => new OSx.Dialogs()).Value;
+
+        public MessageBoxButton MessageBox(string title, string message, MessageBoxButton[] buttons)
+        {
+            return OSxDialogs.MessageBox(title, message, buttons);
+        }
 
         public string OpenFileDialog(string path, string[] extensions = null)
         {
-            return Implementation.OpenFileDialog(path, extensions);
+            return OSxDialogs.OpenFileDialog(path, extensions);
         }
+
     }
 }

@@ -10,7 +10,8 @@
     <Folder Include="Extensions\" />
     <Folder Include="OS\" />
     <Folder Include="Tools\" />
-    <Folder Include="OS\Platform\" />
+    <Folder Include="OS\Device\" />
     <Folder Include="OS\Dialogs\" />
+    <Folder Include="OS\Developer\" />
   </ItemGroup>
 </Project>

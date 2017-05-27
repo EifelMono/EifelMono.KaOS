@@ -4,12 +4,11 @@ namespace EifelMono.KaOS
 {
     public interface IOS
     {
-
-        ISystem System { get; }
-
-        IPlatform Platform { get; }
+        IDevice Device { get; }
 
         IDialogs Dialogs { get; }
+
+        ISystem System { get; }
 
         /*
         IApplication Application { get; }
@@ -21,7 +20,7 @@ namespace EifelMono.KaOS
         IDetails Details { get; }
 
         IDevice Device { get; }
-        
+
         IMedia Media { get; }
 
         INotification Notification { get; }

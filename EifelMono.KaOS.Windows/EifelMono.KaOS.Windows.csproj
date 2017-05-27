@@ -31,7 +31,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="OS\Platfom\Platform.cs" />
+    <Compile Include="OS\Device\Device.cs" />
     <Compile Include="OS\Dialogs\Dialogs.cs" />
   </ItemGroup>
   <ItemGroup>

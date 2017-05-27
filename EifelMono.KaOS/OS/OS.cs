@@ -3,13 +3,15 @@ namespace EifelMono.KaOS
 {
     public static class OS
     {
-        internal static Lazy<IOS> Instance { get; private set; } = new Lazy<IOS>(() => BackDoor.Instance<IOS>());
+        internal static IOS Instance => new Lazy<IOS>(() => BackDoor.Instance<IOS>()).Value;
 
-        public static ISystem System { get { return Instance.Value.System; } }
+        public static Developer Developer => new Developer();
 
-        public static IPlatform Platform { get { return Instance.Value.Platform; } }
+        public static IDevice Device => Instance.Device;
 
-        public static IDialogs Dialogs { get { return Instance.Value.Dialogs; } }
+        public static IDialogs Dialogs => Instance.Dialogs;
+
+        public static ISystem System => Instance.System;
         /*
         public static IApplication Application { get { return Instance.Value.Application; } }
 
