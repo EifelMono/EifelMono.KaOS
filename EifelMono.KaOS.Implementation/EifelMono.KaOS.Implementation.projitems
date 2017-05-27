@@ -12,6 +12,9 @@
     <Folder Include="$(MSBuildThisFileDirectory)OS\" />
     <Folder Include="$(MSBuildThisFileDirectory)OS\System\" />
     <Folder Include="$(MSBuildThisFileDirectory)OS\System\IO\" />
+    <Folder Include="$(MSBuildThisFileDirectory)OSx\" />
+    <Folder Include="$(MSBuildThisFileDirectory)OSx\Application\" />
+    <Folder Include="$(MSBuildThisFileDirectory)OS\Backup\" />
   </ItemGroup>
   <ItemGroup>
 
@@ -23,5 +26,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)OS\System\IO\Path.cs" />
 
     <Compile Include="$(MSBuildThisFileDirectory)KaOS.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OSx\Application\Application.cs" />
   </ItemGroup>
 </Project>

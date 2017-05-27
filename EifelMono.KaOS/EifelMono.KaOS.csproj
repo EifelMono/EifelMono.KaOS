@@ -15,5 +15,6 @@
     <Folder Include="OS\Developer\" />
     <Folder Include="OS\Device\Camera\" />
     <Folder Include="OS\Device\Camera\Tourch\" />
+    <Folder Include="OS\Application\" />
   </ItemGroup>
 </Project>

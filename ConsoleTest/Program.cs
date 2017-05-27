@@ -16,9 +16,10 @@ namespace ConsoleTest
     {
         public static void Main(string[] args)
         {
-
             EifelMono.KaOS.Implementation.KaOS.Init();
             EifelMono.KaOS.KaOS.Init();
+
+            Console.WriteLine(OS.Application.ExecutionFileName);
 
             Console.WriteLine(OS.Device.PlatformKind);
 

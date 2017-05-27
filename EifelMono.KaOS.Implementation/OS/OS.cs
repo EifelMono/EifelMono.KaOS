@@ -7,6 +7,8 @@ namespace EifelMono.KaOS.Implementation.BackDoor
 {
     public class OS: IOS
     {
+        public IApplication Application => new Lazy<IApplication>(() => new OSx.Application()).Value;
+
         public ISystem System => new Lazy<ISystem>(() => new System()).Value;
 
         public IDevice Device => new Lazy<IDevice>(() => new OSx.Device()).Value;

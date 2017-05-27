@@ -5,6 +5,8 @@ namespace EifelMono.KaOS
     {
         internal static IOS Instance => new Lazy<IOS>(() => BackDoor.Instance<IOS>()).Value;
 
+        public static IApplication Application => Instance.Application;
+
         public static Developer Developer => new Developer();
 
         public static IDevice Device => Instance.Device;

@@ -35,11 +35,13 @@
     <Compile Include="OS\Dialogs\Dialogs.cs" />
     <Compile Include="OS\Device\Camera\Camera.cs" />
     <Compile Include="OS\Device\Camera\Tourch\Tourch.cs" />
+    <Compile Include="OS\Application\Application.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="OS\" />
     <Folder Include="OS\Dialogs\" />
     <Folder Include="OS\Device\Camera\" />
+    <Folder Include="OS\Application\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EifelMono.KaOS\EifelMono.KaOS.csproj">

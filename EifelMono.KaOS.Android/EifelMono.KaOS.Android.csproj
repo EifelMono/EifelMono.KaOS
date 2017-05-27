@@ -50,6 +50,7 @@
     <Compile Include="OS\Dialogs\Dialogs.cs" />
     <Compile Include="OS\Device\Camera\Camera.cs" />
     <Compile Include="OS\Device\Camera\Tourch\Tourch.cs" />
+    <Compile Include="OS\Application\Application.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -68,6 +69,7 @@
     <Folder Include="Dialogs\" />
     <Folder Include="OS\Dialogs\" />
     <Folder Include="OS\Device\Camera\" />
+    <Folder Include="OS\Application\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
