@@ -10,7 +10,6 @@ namespace EifelMono.KaOS.Implementation.OSx
 
         private Checker BadgeRegister = new Checker();
 
-
         private void RegisterBadge()
         {
             if (BadgeRegister.IsRegistered)

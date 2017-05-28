@@ -4,20 +4,17 @@ namespace EifelMono.KaOS
 {
     public class Checker
     {
-        public Checker()
-        {
-            Reset();
-        }
+        private bool _Flag = true;
 
-        private bool _IsFirst = true;
+        public bool Flag { get => _Flag; set => _Flag = value; }
 
         public bool IsFirst
         {
             get
             {
-                if (_IsFirst)
+                if (_Flag)
                 {
-                    _IsFirst = false;
+                    _Flag = false;
                     return true;
                 }
                 return false;
@@ -25,11 +22,6 @@ namespace EifelMono.KaOS
         }
 
         public bool IsRegistered => !IsFirst;
-
-        public void Reset()
-        {
-            _IsFirst = true;
-        }
     }
 
     public class Checker<T> : Checker where T : IComparable
@@ -48,7 +40,7 @@ namespace EifelMono.KaOS
 
         public void Reset(bool withDefaultValue)
         {
-            base.Reset();
+            Flag = true;
             if (withDefaultValue)
                 Value = DefaultValue;
         }
@@ -57,12 +49,6 @@ namespace EifelMono.KaOS
 
         public T Value { get; set; }
 
-        /// <summary>
-        /// Determines whether this instance is first or equal value the specified value setValue.
-        /// </summary>
-        /// <returns><c>true</c> if this instance is first or equal value the specified value setValue; otherwise, <c>false</c>.</returns>
-        /// <param name="value">Value.</param>
-        /// <param name="setValue">If set to <c>true</c> set value.</param>
         public bool IsFirstOrEqual(T value, bool setValue = true)
         {
             bool result = false;
@@ -73,12 +59,6 @@ namespace EifelMono.KaOS
             return result;
         }
 
-        /// <summary>
-        /// Determines whether this instance is first or not equal value the specified value setValue.
-        /// </summary>
-        /// <returns><c>true</c> if this instance is first or not equal value the specified value setValue; otherwise, <c>false</c>.</returns>
-        /// <param name="value">Value.</param>
-        /// <param name="setValue">If set to <c>true</c> set value.</param>
         public bool IsFirstOrNotEqual(T value, bool setValue = true)
         {
             bool result = false;
