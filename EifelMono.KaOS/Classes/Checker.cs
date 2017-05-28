@@ -2,9 +2,9 @@
 
 namespace EifelMono.KaOS
 {
-    public class First
+    public class Checker
     {
-        public First()
+        public Checker()
         {
             Reset();
         }
@@ -24,21 +24,23 @@ namespace EifelMono.KaOS
             }
         }
 
-        public virtual void Reset()
+        public bool IsRegistered => !IsFirst;
+
+        public void Reset()
         {
             _IsFirst = true;
         }
     }
 
-    public class First<T> : First where T : IComparable
+    public class Checker<T> : Checker where T : IComparable
     {
-        public First()
+        public Checker()
         {
             DefaultValue = default(T);
             Reset(true);
         }
 
-        public First(T defaultValue)
+        public Checker(T defaultValue)
         {
             DefaultValue = defaultValue;
             Reset(true);
@@ -85,6 +87,11 @@ namespace EifelMono.KaOS
             if (setValue)
                 Value = value;
             return result;
+        }
+
+        public bool IsFirstOrChanged(T value, bool setValue = true)
+        {
+            return IsFirstOrNotEqual(value, setValue);
         }
     }
 }

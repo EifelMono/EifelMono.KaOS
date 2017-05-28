@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace EifelMono.KaOS
 {
     public static class OS
@@ -7,7 +8,7 @@ namespace EifelMono.KaOS
 
         public static IApplication Application => Instance.Application;
 
-        private static  Lazy<Developer> _Developer = new Lazy<Developer>(() => new Developer());
+        private static Lazy<Developer> _Developer = new Lazy<Developer>(() => new Developer());
 
         public static Developer Developer => _Developer.Value;
 

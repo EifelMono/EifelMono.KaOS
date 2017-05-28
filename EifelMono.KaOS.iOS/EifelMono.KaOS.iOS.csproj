@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\EifelMono.KaOS.Implementation\EifelMono.KaOS.Implementation.projitems" Label="Shared" Condition="Exists('..\EifelMono.KaOS.Implementation\EifelMono.KaOS.Implementation.projitems')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -69,5 +68,9 @@
       <Name>EifelMono.KaOS</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="..\EifelMono.KaOS.Implementation\EifelMono.KaOS.Implementation.projitems" Label="Shared" Condition="Exists('..\EifelMono.KaOS.Implementation\EifelMono.KaOS.Implementation.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

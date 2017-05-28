@@ -17,4 +17,7 @@
     <Folder Include="OS\Device\Camera\Tourch\" />
     <Folder Include="OS\Application\" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Runtime" Version="4.3.0" />
+  </ItemGroup>
 </Project>
