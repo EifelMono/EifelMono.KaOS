@@ -43,6 +43,16 @@ namespace EifelMono.KaOS
         }
 
         internal static List<Item> _Items = null;
+
+        internal static void FillItems(Assembly assembly)
+        {
+            if (assembly == null)
+                return;
+            object[] attributes = assembly.GetCustomAttributes(typeof(BackDoorAttribute)).ToArray<Attribute>();
+            if (attributes.Length != 0)
+                foreach (BackDoorAttribute attribute in attributes)
+                    _Items.Add(new Item() { ClassType = attribute.ClassType });  
+        }
             
         internal static List<Item> Items
         {
@@ -50,16 +60,10 @@ namespace EifelMono.KaOS
             {
                 if (_Items== null)
                 {
-                    var k= Assembly.GetEntryAssembly().GetReferencedAssemblies();
                     _Items = new List<Item>();
-                    foreach (var assemblyName in Assembly.GetEntryAssembly().GetReferencedAssemblies()) 
-                    {
-                        Assembly assembly = Assembly.Load(assemblyName);
-                        object[] attributes = assembly.GetCustomAttributes(typeof(BackDoorAttribute)).ToArray<Attribute>();
-                        if (attributes.Length != 0)
-                            foreach (BackDoorAttribute attribute in attributes)
-                                _Items.Add(new Item() { ClassType = attribute.ClassType });
-                    } 
+                    FillItems(Assembly.GetEntryAssembly());
+                    foreach (var assemblyName in Assembly.GetEntryAssembly().GetReferencedAssemblies())
+                        FillItems(Assembly.Load(assemblyName));
                 }
                 return _Items;
             }

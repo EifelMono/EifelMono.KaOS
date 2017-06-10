@@ -5,10 +5,11 @@ using System.Runtime.CompilerServices;
 using Newtonsoft.Json;
 using System.IO;
 using System.Reflection;
+using EifelMono.KaOS.Extensions;
 
 namespace EifelMono.KaOS
 {
-    public partial class LangX : IEquatable<LangX>
+    public class LangX : IEquatable<LangX>
     {
         #region Core
         [JsonIgnore]
@@ -68,7 +69,7 @@ namespace EifelMono.KaOS
                         if (result != null)
                             if (result.Length > 0)
                                 result = "." + result;
-                        result = name+ result;
+                        result = name + result;
                     }
                 }
             }
@@ -79,7 +80,7 @@ namespace EifelMono.KaOS
             return result;
         }
 
-        public static LangX New(string formattedText = "", [CallerMemberName] string propertyName = "", [CallerFilePath] string filePathName = "")
+        public static LangX NewX(string formattedText = "", [CallerMemberName] string propertyName = "", [CallerFilePath] string filePathName = "")
         {
             var prefix = Path.GetFileNameWithoutExtension(filePathName);
             return new LangX
@@ -88,9 +89,55 @@ namespace EifelMono.KaOS
                 ResX = $"{ResXPrefix(filePathName)}{propertyName}"
             };
         }
+
+        public static LangX PrefixNewX(string prefix, string formattedText = "", [CallerMemberName] string propertyName = "", [CallerFilePath] string filePathName = "")
+        {
+            if (string.IsNullOrEmpty(prefix))
+                prefix = "";
+            else
+                if (!prefix.EndsWith(".", StringComparison.Ordinal))
+                prefix += ".";
+            return new LangX
+            {
+                FormattedText = formattedText,
+                ResX = $"{prefix}{propertyName}"
+            };
+        }
         #endregion
 
         #region Items
+
+        static First FirstInit = new First();
+
+        protected static void Init(Assembly assembly)
+        {
+            if (assembly == null)
+                return;
+            var t = assembly.GetTypes();
+            foreach (var type in assembly.GetTypes())
+            {
+                if (type.GetTypeInfo().GetCustomAttribute(typeof(LangXAttribute)) != null)
+                {
+                    foreach (var p in type.GetTypeInfo().GetProperties(BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy))
+                    {
+                        p.GetValue(null, null);
+                        break;
+                    }
+                }
+            }
+        }
+
+        public static void Init()
+        {
+            if (FirstInit.IsFirst)
+            {
+                Init(Assembly.GetEntryAssembly());
+                foreach (var assemblyName in Assembly.GetEntryAssembly().GetReferencedAssemblies())
+                    Init(Assembly.Load(assemblyName));
+            }
+        }
+
+
         public static List<LangX> Items { get; private set; } = new List<LangX>();
 
         private static LangX ItemsAdd(LangX langX)
@@ -110,6 +157,7 @@ namespace EifelMono.KaOS
 
         public static void WriteToFile(string filename)
         {
+            Init();
             File.WriteAllText(filename, JsonConvert.SerializeObject(Items, Formatting.Indented));
         }
 
