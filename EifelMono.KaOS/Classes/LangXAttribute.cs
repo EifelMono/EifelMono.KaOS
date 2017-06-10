@@ -1,10 +1,9 @@
 ﻿using System;
-namespace EifelMono.KaOS.Classes
+
+namespace EifelMono.KaOS
 {
-    public class LangXAttribute
+    [AttributeUsage(AttributeTargets.Class) ]
+    public class LangXAttribute: Attribute
     {
-        public LangXAttribute()
-        {
-        }
     }
 }
