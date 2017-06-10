@@ -1,10 +1,12 @@
 ﻿using System;
+using Newtonsoft.Json;
 
 namespace EifelMono.KaOS
 {
     public class EnumOf<T> : IEquatable<EnumOf<T>> where T : IComparable
     {
         #region Core
+        [JsonIgnore]
         private int HashCode { get; set; }
 
         // I Need this for serialization
@@ -39,7 +41,7 @@ namespace EifelMono.KaOS
 
         public override string ToString()
         {
-            return $"{Value:[HasCode]}";
+            return $"{Value}";
         }
 
         public static bool operator ==(EnumOf<T> left, EnumOf<T> right)

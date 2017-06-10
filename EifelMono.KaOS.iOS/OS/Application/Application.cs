@@ -8,11 +8,11 @@ namespace EifelMono.KaOS.Implementation.OSx
     {
         public bool IsAvailable => true;
 
-        private Checker BadgeRegister = new Checker();
+        private First BadgeRegister = new First();
 
         private void RegisterBadge()
         {
-            if (BadgeRegister.IsRegistered)
+            if (BadgeRegister.IsFirst)
             {
                 var settings = UIUserNotificationSettings.GetSettingsForTypes(
                      UIUserNotificationType.Badge,
@@ -34,7 +34,7 @@ namespace EifelMono.KaOS.Implementation.OSx
             }
         }
 
-        private Checker<StatusBarStyle> _StatusBarStyle = new Checker<StatusBarStyle>(StatusBarStyle.Normal);
+        private First<StatusBarStyle> _StatusBarStyle = new First<StatusBarStyle>(StatusBarStyle.Normal);
 
         public StatusBarStyle StatusBarStyle { get => _StatusBarStyle.Value; set => SetStatusBarStyle(value, false); }
 
@@ -58,7 +58,7 @@ namespace EifelMono.KaOS.Implementation.OSx
                 }
         }
 
-        private Checker<Visibility> _SetStatusBarVisibility = new Checker<Visibility>(Visibility.Visible);
+        private First<Visibility> _SetStatusBarVisibility = new First<Visibility>(Visibility.Visible);
 
         public Visibility StatusBarVisibility { get => _SetStatusBarVisibility.Value; set => SetStatusBarVisibility(value, false); }
 

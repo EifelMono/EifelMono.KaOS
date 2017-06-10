@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft;
+using Newtonsoft.Json;
 
 namespace EifelMono.KaOS.Extensions
 {
@@ -155,6 +157,13 @@ namespace EifelMono.KaOS.Extensions
 
         #endregion
 
+        public static T Clamp<T>(this T val, T min, T max) where T : IComparable<T>
+        {
+            if (val.CompareTo(min) < 0) return min;
+            else if (val.CompareTo(max) > 0) return max;
+            else return val;
+        }
+
         #region Pipe
 
         public static T Pipe<T>(this T pipe, Action<T> action)
@@ -166,6 +175,11 @@ namespace EifelMono.KaOS.Extensions
         public static T Pipe<T>(this T pipe, Func<T, T> action)
         {
             return action(pipe);
+        }
+
+        public static T Clone<T>(this T value)
+        {
+            return JsonConvert.DeserializeObject<T>(JsonConvert.SerializeObject(value));
         }
         #endregion
     }

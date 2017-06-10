@@ -16,8 +16,10 @@
     <Folder Include="OS\Device\Camera\" />
     <Folder Include="OS\Device\Camera\Tourch\" />
     <Folder Include="OS\Application\" />
+    <Folder Include="Extensions\Flow\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.Runtime" Version="4.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
   </ItemGroup>
 </Project>

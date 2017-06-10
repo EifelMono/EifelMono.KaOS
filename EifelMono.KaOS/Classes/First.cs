@@ -2,7 +2,7 @@
 
 namespace EifelMono.KaOS
 {
-    public class Checker
+    public class First
     {
         private bool _Flag = true;
 
@@ -20,19 +20,17 @@ namespace EifelMono.KaOS
                 return false;
             }
         }
-
-        public bool IsRegistered => !IsFirst;
     }
 
-    public class Checker<T> : Checker where T : IComparable
+    public class First<T> : First where T : IComparable
     {
-        public Checker()
+        public First()
         {
             DefaultValue = default(T);
             Reset(true);
         }
 
-        public Checker(T defaultValue)
+        public First(T defaultValue)
         {
             DefaultValue = defaultValue;
             Reset(true);
