@@ -44,7 +44,7 @@ namespace EifelMono.KaOS
 
         internal static List<Item> _Items = null;
 
-        internal static void FillItems(Assembly assembly)
+        internal static void FindAssemblyItems(Assembly assembly)
         {
             if (assembly == null)
                 return;
@@ -61,9 +61,9 @@ namespace EifelMono.KaOS
                 if (_Items== null)
                 {
                     _Items = new List<Item>();
-                    FillItems(Assembly.GetEntryAssembly());
+                    FindAssemblyItems(Assembly.GetEntryAssembly());
                     foreach (var assemblyName in Assembly.GetEntryAssembly().GetReferencedAssemblies())
-                        FillItems(Assembly.Load(assemblyName));
+                        FindAssemblyItems(Assembly.Load(assemblyName));
                 }
                 return _Items;
             }

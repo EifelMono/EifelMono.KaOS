@@ -1,7 +1,7 @@
 ﻿using System;
 using AVFoundation;
 using Foundation;
-using EifelMono.KaOS.Extensions;
+using EifelMono.Core.Extensions;
 
 namespace EifelMono.KaOS.Implementation.OSx
 {
