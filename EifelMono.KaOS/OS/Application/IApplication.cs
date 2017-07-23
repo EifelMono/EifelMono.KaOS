@@ -5,6 +5,12 @@ namespace EifelMono.KaOS
     {
         int Badge { get; set; }
 
+        string Name { get; }
+
+        string Version { get; }
+
+        string Build { get; }
+
         string ExecutionFileName { get; }
 
         void SetStatusBarStyle(StatusBarStyle statusBarStyle, bool animated);

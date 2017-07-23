@@ -9,6 +9,43 @@ namespace EifelMono.KaOS.Implementation.OSx
     {
         public bool IsAvailable => true;
 
+
+        public string Name
+        {
+            get
+            {
+                return Config("CFBundleDisplayName");
+            }
+        }
+
+        public string Version
+        {
+            get
+            {
+                return Config("CFBundleShortVersionString");
+            }
+        }
+
+        public string Build
+        {
+            get
+            {
+                return Config("CFBundleVersion");
+            }
+        }
+
+        public string Config(string key)
+        {
+            try
+            {
+                return NSBundle.MainBundle.ObjectForInfoDictionary(key).ToString();
+            }
+            catch
+            {
+                return "";
+            }
+        }
+
         private First BadgeRegister = new First();
 
         private void RegisterBadge()

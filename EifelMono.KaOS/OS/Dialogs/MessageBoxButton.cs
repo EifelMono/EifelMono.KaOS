@@ -1,6 +1,8 @@
 ﻿using System;
+
 namespace EifelMono.KaOS
 {
+    
     public enum MessageBoxButton
     {
         Ok,
@@ -8,4 +10,5 @@ namespace EifelMono.KaOS
         Yes,
         None
     }
+
 }
