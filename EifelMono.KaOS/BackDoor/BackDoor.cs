@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 
@@ -51,19 +52,27 @@ namespace EifelMono.KaOS
             object[] attributes = assembly.GetCustomAttributes(typeof(BackDoorAttribute)).ToArray<Attribute>();
             if (attributes.Length != 0)
                 foreach (BackDoorAttribute attribute in attributes)
-                    _Items.Add(new Item() { ClassType = attribute.ClassType });  
+                    _Items.Add(new Item() { ClassType = attribute.ClassType });
         }
-            
+
         internal static List<Item> Items
         {
             get
             {
-                if (_Items== null)
+                if (_Items == null)
                 {
                     _Items = new List<Item>();
                     FindAssemblyItems(Assembly.GetEntryAssembly());
                     foreach (var assemblyName in Assembly.GetEntryAssembly().GetReferencedAssemblies())
-                        FindAssemblyItems(Assembly.Load(assemblyName));
+                        try
+                        {
+                            FindAssemblyItems(Assembly.Load(assemblyName));
+                        }
+                        catch (Exception ex)
+                        {
+                            Debug.WriteLine(ex);
+                        }
+
                 }
                 return _Items;
             }
