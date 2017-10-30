@@ -1,18 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using EifelMono.KaOS;
+using EifelMono.KaOS.Implementation;
 using UIKit;
 
-namespace EifelMono.KaOS.Implementation.OSx
+[assembly: BackDoor(typeof(EifelMono.KaOS.iOS.Camera))]
+namespace EifelMono.KaOS.iOS
 {
-    public class Camera : ICamera
+    public class Camera : CameraCore
     {
-        public bool IsAvailable => true;
+        public override bool IsAvailable => true;
 
-        private Lazy<ITourch> _Tourch = new Lazy<ITourch>(() => new Tourch());
-
-        public ITourch Tourch => _Tourch.Value;
-
-        public List<CameraKind> AvailableCameras()
+        public override List<CameraKind> AvailableCameras()
         {
             List<CameraKind> availableCameras = new List<CameraKind>();
             if (UIImagePickerController.IsCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Front))

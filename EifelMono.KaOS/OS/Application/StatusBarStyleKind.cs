@@ -1,7 +1,7 @@
 ﻿using System;
 namespace EifelMono.KaOS
 {
-    public enum StatusBarStyle
+    public enum StatusBarStyleKind
     {
         Normal,
         Translucent,

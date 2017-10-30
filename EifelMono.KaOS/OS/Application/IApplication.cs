@@ -13,9 +13,9 @@ namespace EifelMono.KaOS
 
         string ExecutionFileName { get; }
 
-        void SetStatusBarStyle(StatusBarStyle statusBarStyle, bool animated);
+        void SetStatusBarStyle(StatusBarStyleKind statusBarStyle, bool animated);
 
-        StatusBarStyle StatusBarStyle { get; set; }
+        StatusBarStyleKind StatusBarStyle { get; set; }
 
         /// <summary>
         /// Sets the status bar visibility.<br /> 
@@ -26,9 +26,8 @@ namespace EifelMono.KaOS
         /// <param name="visibility">Visibility.</param>
         /// <param name="animated">If set to <c>true</c> animated.</param>
 
-        void SetStatusBarVisibility(Visibility visibility, bool animated);
+        void SetStatusBarVisibility(VisibilityKind visibility, bool animated);
 
-        Visibility StatusBarVisibility { get; set; }
-
+        VisibilityKind StatusBarVisibility { get; set; }
     }
 }

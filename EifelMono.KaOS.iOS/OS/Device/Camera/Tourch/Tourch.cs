@@ -2,13 +2,17 @@
 using AVFoundation;
 using Foundation;
 using EifelMono.Core.Extensions;
+using EifelMono.KaOS;
+using EifelMono.KaOS.Implementation;
 
-namespace EifelMono.KaOS.Implementation.OSx
+[assembly: BackDoor(typeof(EifelMono.KaOS.iOS.Tourch))]
+namespace EifelMono.KaOS.iOS
 {
-    public class Tourch : ITourch
+    public class Tourch : TourchCore
     {
         bool? _IsAvailable = null;
-        bool IAvailable.IsAvailable
+
+        public override bool IsAvailable
         {
             get
             {
@@ -21,7 +25,7 @@ namespace EifelMono.KaOS.Implementation.OSx
             }
         }
 
-        public bool Value
+        public override bool Value
         {
             get
             {
@@ -53,7 +57,7 @@ namespace EifelMono.KaOS.Implementation.OSx
                                 device.UnlockForConfiguration();
                             }
                             else
-                                OS.Developer.LogError($"LockForConfiguration out error={error}");
+                                Log.LogError($"LockForConfiguration out error={error}");
                         }
                     }
                 }

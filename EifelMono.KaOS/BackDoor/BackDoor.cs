@@ -121,10 +121,19 @@ namespace EifelMono.KaOS
             return Get<T>(BackDoor.Mode.New);
         }
 
-        public static T Instance<T>() where T : class
+        public static T New<T, TDefault>() where T : class
+                                           where TDefault : T, new()
         {
-            return Get<T>(BackDoor.Mode.Instance);
+            var result = Get<T>(BackDoor.Mode.New);
+            if (result == null)
+                return new TDefault();
+            return result;
         }
-        #endregion
+
+    public static T Instance<T>() where T : class
+    {
+        return Get<T>(BackDoor.Mode.Instance);
     }
+    #endregion
+}
 }

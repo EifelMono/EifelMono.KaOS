@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Entitlements.plist" />
   </ItemGroup>
   <Import Project="..\EifelMono.KaOS.Implementation\EifelMono.KaOS.Implementation.projitems" Label="Shared" Condition="Exists('..\EifelMono.KaOS.Implementation\EifelMono.KaOS.Implementation.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

@@ -1,8 +1,8 @@
 ﻿using EifelMono.KaOS;
-using EifelMono.KaOS.Shared;
+using EifelMono.KaOS.Implementation;
 
-[assembly: BackDoor(typeof(EifelMono.KaOS.Framework.Dialogs))]
-namespace EifelMono.KaOS.Framework
+[assembly: BackDoor(typeof(EifelMono.KaOS.Library.Dialogs))]
+namespace EifelMono.KaOS.Library
 {
     public class Dialogs : DialogsCore
     {

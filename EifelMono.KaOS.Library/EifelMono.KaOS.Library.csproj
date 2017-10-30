@@ -4,4 +4,12 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="OS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EifelMono.KaOS\EifelMono.KaOS.csproj" />
+    <ProjectReference Include="..\..\EifelMono.Core\EifelMono.Core\EifelMono.Core.csproj" />
+  </ItemGroup>
+  <Import Project="..\EifelMono.KaOS.Implementation\EifelMono.KaOS.Implementation.projitems" Label="Shared" Condition="Exists('..\EifelMono.KaOS.Implementation\EifelMono.KaOS.Implementation.projitems')" />
 </Project>

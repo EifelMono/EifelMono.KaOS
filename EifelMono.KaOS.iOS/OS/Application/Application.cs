@@ -1,16 +1,18 @@
 ﻿using System;
 using EifelMono.Core;
+using EifelMono.KaOS;
+using EifelMono.KaOS.Implementation;
 using Foundation;
 using UIKit;
 
-namespace EifelMono.KaOS.Implementation.OSx
+[assembly: BackDoor(typeof(EifelMono.KaOS.iOS.Application))]
+namespace EifelMono.KaOS.iOS
 {
-    public partial class Application : IApplication
+    public class Application : ApplicationCore
     {
-        public bool IsAvailable => true;
+        public override bool IsAvailable { get => true; }
 
-
-        public string Name
+        public override string Name
         {
             get
             {
@@ -18,7 +20,7 @@ namespace EifelMono.KaOS.Implementation.OSx
             }
         }
 
-        public string Version
+        public override string Version
         {
             get
             {
@@ -26,7 +28,7 @@ namespace EifelMono.KaOS.Implementation.OSx
             }
         }
 
-        public string Build
+        public override string Build
         {
             get
             {
@@ -59,7 +61,7 @@ namespace EifelMono.KaOS.Implementation.OSx
             }
         }
 
-        public int Badge
+        public override int Badge
         {
             get
             {
@@ -72,46 +74,46 @@ namespace EifelMono.KaOS.Implementation.OSx
             }
         }
 
-        private First<StatusBarStyle> _StatusBarStyle = new First<StatusBarStyle>(StatusBarStyle.Normal);
+        private First<StatusBarStyleKind> _StatusBarStyle = new First<StatusBarStyleKind>(StatusBarStyleKind.Normal);
 
-        public StatusBarStyle StatusBarStyle { get => _StatusBarStyle.Value; set => SetStatusBarStyle(value, false); }
+        public override StatusBarStyleKind StatusBarStyle { get => _StatusBarStyle.Value; set => SetStatusBarStyle(value, false); }
 
-        public void SetStatusBarStyle(StatusBarStyle statusBarStyle, bool animated)
+        public override void SetStatusBarStyle(StatusBarStyleKind statusBarStyle, bool animated)
         {
             if (_StatusBarStyle.IsFirstOrChanged(statusBarStyle))
                 switch (statusBarStyle)
                 {
-                    case StatusBarStyle.Normal:
+                    case StatusBarStyleKind.Normal:
                         UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.Default, animated);
                         break;
-                    case StatusBarStyle.Light:
+                    case StatusBarStyleKind.Light:
                         UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, animated);
                         break;
-                    case StatusBarStyle.Dark:
+                    case StatusBarStyleKind.Dark:
                         UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.BlackOpaque, animated);
                         break;
-                    case StatusBarStyle.Translucent:
+                    case StatusBarStyleKind.Translucent:
                         UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.BlackTranslucent, animated);
                         break;
                 }
         }
 
-        private First<Visibility> _SetStatusBarVisibility = new First<Visibility>(Visibility.Visible);
+        private First<VisibilityKind> _SetStatusBarVisibility = new First<VisibilityKind>(VisibilityKind.Visible);
 
-        public Visibility StatusBarVisibility { get => _SetStatusBarVisibility.Value; set => SetStatusBarVisibility(value, false); }
+        public override VisibilityKind StatusBarVisibility { get => _SetStatusBarVisibility.Value; set => SetStatusBarVisibility(value, false); }
 
-        public void SetStatusBarVisibility(Visibility visibility, bool animated)
+        public override void SetStatusBarVisibility(VisibilityKind visibility, bool animated)
         {
             if (_SetStatusBarVisibility.IsFirstOrChanged(visibility))
                 switch (visibility)
                 {
-                    case Visibility.Visible:
+                    case VisibilityKind.Visible:
                         UIApplication.SharedApplication.SetStatusBarHidden(false, animated);
                         break;
-                    case Visibility.Hidden:
+                    case VisibilityKind.Hidden:
                         UIApplication.SharedApplication.SetStatusBarHidden(true, animated); UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, animated);
                         break;
-                    case Visibility.Disabled:
+                    case VisibilityKind.Disabled:
                         break;
                 }
         }

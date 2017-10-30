@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EifelMono.KaOS.Platform
+namespace EifelMono.KaOS.Implementation
 {
     public class CameraCore : ICamera
     {

@@ -1,8 +1,8 @@
 ﻿using EifelMono.KaOS;
-using EifelMono.KaOS.Shared;
+using EifelMono.KaOS.Implementation;
 
-[assembly: BackDoor(typeof(EifelMono.KaOS.Framework.Tourch))]
-namespace EifelMono.KaOS.Framework
+[assembly: BackDoor(typeof(EifelMono.KaOS.Library.Tourch))]
+namespace EifelMono.KaOS.Library
 {
     public class Tourch : TourchCore
     {

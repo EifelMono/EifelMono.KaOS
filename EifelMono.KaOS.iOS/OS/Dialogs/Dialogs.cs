@@ -5,26 +5,16 @@ using EifelMono.Core.Extensions;
 using EifelMono.KaOS;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using EifelMono.KaOS.Implementation;
 
-namespace EifelMono.KaOS.Implementation.OSx
+[assembly: BackDoor(typeof(EifelMono.KaOS.iOS.Dialogs))]
+namespace EifelMono.KaOS.iOS
 {
-    public class Dialogs : IDialogs
+    public class Dialogs : DialogsCore
     {
-        public bool IsAvailable => true;
+        public override bool IsAvailable => true;
 
-        public MessageBoxButton MessageBox(string title, string message, MessageBoxButton[] buttons)
-        {
-            OS.Developer.NoEquivalentFunctionAvailable(nameof(MessageBox));
-            return MessageBoxButton.None;
-        }
-
-        public string OpenFileDialog(string path, string[] extensions)
-        {
-            OS.Developer.NoEquivalentFunctionAvailable(nameof(OpenFileDialog));
-            return "";
-        }
-
-        public async void ActivityController(object obj, ActivityType activityType)
+        public override async void ActivityController(object obj, ActivityType activityType)
         {
             try
             {

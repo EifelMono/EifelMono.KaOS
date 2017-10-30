@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{462B9D69-0480-4F1F-A601-B8A11C5E7B8F}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>EifelMono.KaOS.Implementation</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)OS\Application\ApplicationCore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OS\Device\Camera\CameraCore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OS\Device\Camera\Tourch\TourchCore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OS\Device\DeviceCore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OS\Dialogs\DialogsCore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OS\OS.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KaOS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)OS\" />
+  </ItemGroup>
+</Project>

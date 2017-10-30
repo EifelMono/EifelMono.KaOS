@@ -1,19 +1,17 @@
 ﻿using System;
 using AudioToolbox;
+using EifelMono.KaOS;
+using EifelMono.KaOS.Implementation;
 
-namespace EifelMono.KaOS.Implementation.OSx
+[assembly: BackDoor(typeof(EifelMono.KaOS.iOS.Device))]
+namespace EifelMono.KaOS.iOS
 {
-    public class Device : IDevice
+    public class Device : DeviceCore
     {
-        public PlatformKind PlatformKind => PlatformKind.iOS;
+        public override bool IsAvailable => true;
+        public override PlatformKind Platform => PlatformKind.iOS;
 
-        public bool IsAvailable => true;
-
-        private Lazy<ICamera> _Camera = new Lazy<ICamera>(() => new Camera());
-
-        public ICamera Camera => _Camera.Value;
-
-        public void Vibrate(int time = -1)
+        public override void Vibrate(int time = -1)
         {
             SystemSound.Vibrate.PlaySystemSound();
         }

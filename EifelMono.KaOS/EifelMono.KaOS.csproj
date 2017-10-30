@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -9,7 +9,6 @@
     <Folder Include="OS\" />
     <Folder Include="OS\Device\" />
     <Folder Include="OS\Dialogs\" />
-    <Folder Include="OS\Developer\" />
     <Folder Include="OS\Device\Camera\" />
     <Folder Include="OS\Device\Camera\Tourch\" />
     <Folder Include="OS\Application\" />
@@ -17,5 +16,13 @@
   <ItemGroup>
     <PackageReference Include="System.Runtime" Version="4.3.0" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="OS\System\ISystem.cs" />
+    <Compile Remove="OS\System\IO\IDirectory.cs" />
+    <Compile Remove="OS\System\IO\IFile.cs" />
+    <Compile Remove="OS\System\IO\IIO.cs" />
+    <Compile Remove="OS\System\IO\IPath.cs" />
+    <Compile Remove="Developer\Developer.cs" />
   </ItemGroup>
 </Project>

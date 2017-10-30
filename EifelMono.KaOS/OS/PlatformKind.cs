@@ -1,13 +1,16 @@
 ﻿using System;
 namespace EifelMono.KaOS
 {
-    public enum KaOSPlatform
+    public enum PlatformKind
     {
+        Unknown,
         Android,
         Framework,
         iOS,
-        Windows,
+        Library,
+        macOS,
         UWP,
+        Windows,
         Wpf
     }
 }

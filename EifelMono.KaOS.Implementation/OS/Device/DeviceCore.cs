@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EifelMono.KaOS.Platform
+namespace EifelMono.KaOS.Implementation
 {
     public class DeviceCore : IDevice
     {

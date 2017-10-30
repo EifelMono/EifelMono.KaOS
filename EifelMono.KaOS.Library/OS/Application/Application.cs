@@ -1,8 +1,8 @@
 ﻿using EifelMono.KaOS;
-using EifelMono.KaOS.Shared;
+using EifelMono.KaOS.Implementation;
 
-[assembly: BackDoor(typeof(EifelMono.KaOS.Framework.Application))]
-namespace EifelMono.KaOS.Framework
+[assembly: BackDoor(typeof(EifelMono.KaOS.Library.Application))]
+namespace EifelMono.KaOS.Library
 {
     public class Application : ApplicationCore
     {
