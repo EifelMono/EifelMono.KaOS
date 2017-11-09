@@ -6,6 +6,8 @@ namespace EifelMono.KaOS.Implementation
 {
     public class OS : IOS
     {
+        public PlatformKind Platform => _Device.Value.Platform;
+
         private Lazy<IApplication> _Application = new Lazy<IApplication>(() => BackDoor.New<IApplication, ApplicationCore>());
         public IApplication Application => _Application.Value;
 

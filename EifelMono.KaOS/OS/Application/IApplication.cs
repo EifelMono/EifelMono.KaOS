@@ -7,6 +7,8 @@ namespace EifelMono.KaOS
 
         string Name { get; }
 
+        Version AssemblyVersion { get; }
+
         string Version { get; }
 
         string Build { get; }

@@ -33,7 +33,7 @@ namespace EifelMono.KaOS.macOS
             }
         }
 
-        public string Config(string key)
+        protected string Config(string key)
         {
             try
             {

@@ -14,10 +14,13 @@ namespace EifelMono.KaOS
                 return instance;
             });
 
+        public static PlatformKind Platform => Instance.Value.Platform;
+
         public static IApplication Application => Instance.Value.Application;
 
         public static IDevice Device => Instance.Value.Device;
 
         public static IDialogs Dialogs => Instance.Value.Dialogs;
+
     }
 }

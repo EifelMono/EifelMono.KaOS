@@ -7,5 +7,6 @@ namespace EifelMono.KaOS.Library
     public class Application : ApplicationCore
     {
         public override bool IsAvailable { get => false; }
+
     }
 }

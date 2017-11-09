@@ -17,7 +17,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>__UNIFIED__;__MACOS__;DEBUG;__KaOSmacOS__</DefineConstants>
+    <DefineConstants>__UNIFIED__;__MACOS__;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <EnableCodeSigning>false</EnableCodeSigning>
@@ -32,7 +32,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
-    <DefineConstants>__UNIFIED__;__MACOS__;__KaOSmacOS__</DefineConstants>
+    <DefineConstants>__UNIFIED__;__MACOS__</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <EnableCodeSigning>false</EnableCodeSigning>
@@ -59,11 +59,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EifelMono.KaOS\EifelMono.KaOS.csproj">
-      <Project>{232508EB-BD67-442C-AC8D-178CC7D2D5A2}</Project>
+      <Project>{A9AD3E77-DF85-429E-ADEB-9EC7847331D4}</Project>
       <Name>EifelMono.KaOS</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\EifelMono.Core\EifelMono.Core\EifelMono.Core.csproj">
-      <Project>{47BC06E9-5650-4A61-82D6-1BC9E57906DA}</Project>
+      <Project>{55108CAF-9F80-45D7-8212-12AF3C7A3607}</Project>
       <Name>EifelMono.Core</Name>
     </ProjectReference>
   </ItemGroup>

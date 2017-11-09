@@ -16,6 +16,8 @@ namespace EifelMono.KaOS.Implementation
 
         public virtual string Name => throw new NotImplementedException();
 
+        public virtual Version AssemblyVersion => System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+
         public virtual string Version => throw new NotImplementedException();
 
         public virtual string Build => throw new NotImplementedException();

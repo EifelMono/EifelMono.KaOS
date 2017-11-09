@@ -36,7 +36,7 @@ namespace EifelMono.KaOS.iOS
             }
         }
 
-        public string Config(string key)
+        protected string Config(string key)
         {
             try
             {
