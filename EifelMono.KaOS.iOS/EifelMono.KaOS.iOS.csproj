@@ -64,11 +64,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EifelMono.KaOS\EifelMono.KaOS.csproj">
-      <Project>{7425EEA4-33FA-446E-8858-E7FA3A3579D0}</Project>
+      <Project>{4B74A856-B892-4CD7-9AA4-532305180949}</Project>
       <Name>EifelMono.KaOS</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\EifelMono.Core\EifelMono.Core\EifelMono.Core.csproj">
-      <Project>{856366B2-8FA5-4147-99E5-9441AC3D460B}</Project>
+      <Project>{104E0AEB-8227-473E-AADA-905D0DDA35F9}</Project>
       <Name>EifelMono.Core</Name>
     </ProjectReference>
   </ItemGroup>
